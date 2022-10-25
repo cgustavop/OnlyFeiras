@@ -1,8 +1,8 @@
 # Requisitos
 
---
+## Requisitos Funcionais
 
-## Usuários
+### Usuários
 
 Um usuário é qualquer pessoa que utilize a plataforma.
 Este pode adotar 3 papéis distintos:
@@ -27,7 +27,9 @@ Um usuário **cliente pode tornar-se comerciante** através da sua área pessoal
 
 *Objetivo secundário: Um comerciante poderá ser **verificado** por um gestor da plataforma como legítimo reunindo as condições para tal.*
 
-## Feiras
+## Requisitos não Funcionais
+
+### Feiras
 
 Sendo todo o proṕosito da plataforma, as feiras tratam-se de eventos pontuais, i.e. que se realizam por um determinado período de tempo, onde se agregam comerciantes, sendo eles representantes de marcas registadas e/ou vendedores individuais, e que expõe os seus produtos ou serviços na sua **banca**.
 
