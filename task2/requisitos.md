@@ -53,6 +53,7 @@ A disposição das bancas na página da feira será feita de forma igualitária 
 Na organização de qualquer feira, poderá haver uma ou mais empresas a apoiar o evento, as quais beneficiarão de regalias durante o mesmo.
 
 ## Ações
+(provavelmente enquadrar em requisitos funcionais tanto de utilizador como sistema)
 
 - compra
 - venda
