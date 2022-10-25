@@ -1,6 +1,6 @@
 # Requisitos
 
-## Requisitos Funcionais
+## Requisitos do Utilizador
 
 ### Usuários
 
@@ -27,7 +27,7 @@ Um usuário **cliente pode tornar-se comerciante** através da sua área pessoal
 
 *Objetivo secundário: Um comerciante poderá ser **verificado** por um gestor da plataforma como legítimo reunindo as condições para tal.*
 
-## Requisitos não Funcionais
+## Requisitos do Sistema
 
 ### Feiras
 
@@ -53,6 +53,7 @@ A disposição das bancas na página da feira será feita de forma igualitária 
 Na organização de qualquer feira, poderá haver uma ou mais empresas a apoiar o evento, as quais beneficiarão de regalias durante o mesmo.
 
 ## Ações
+(provavelmente enquadrar em requisitos funcionais tanto de utilizador como sistema)
 
 - compra
 - venda
