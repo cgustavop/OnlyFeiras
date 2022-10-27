@@ -68,3 +68,22 @@ Na organização de qualquer feira, poderá haver uma ou mais empresas a apoiar 
 - gestão de bancas
 - vista por categorias
 - vista de feiras passadas/presentes/futuras
+
+## Ações 2.0
+
+Vista do Visitante:
+- Um visitante pode registar uma conta fornecendo ao sistema o seu nome, *username*, *password*, *email*.
+- Um visitante pode visualizar o cartaz de feira.
+
+Vista de Utilizador:
+
+- Utilizador é capaz de autenticar-se com os dados da sua conta.
+- Um utilizador pode visualizar o cartaz de feira.
+- Um utilizador é capaz de visitar uma feira.
+- Um utilizador é capaz de visitar uma banca.
+- Um utilizador é capaz de adicionar produtos ao carrinho.
+- Um utilizador consegue fazer a compra de produtos.
+
+Vista do Sistema
+- O sistema faz a reserva de produtos que se encontram no carrinho. (?) 
+- O sistema deve ter a implementação de uma vista por categorias.
