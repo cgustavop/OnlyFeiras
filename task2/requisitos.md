@@ -94,46 +94,46 @@ ________________________________________________________________________________
 
 ### Funcionais:
 
--Um utilizador pode visualizar o cartaz de feira
--Um visitante pode:
-  -registar uma conta fornecendo ao sistema o seu nome, username, password, email
-  -autenticar-se com os dados da sua conta (username e password)
--Um utilizador autenticado pode: 
-  -visitar uma feira
-  -visitar uma banca
-  -adicionar produtos ao carrinho
-  -fazer a compra de produtos
--Um cliente pode fazer uma candidatura de comerciante
--Um comerciante pode:
-  -adicionar produto á sua banca
-  -fazer candidatura de participação
-  -patrocinar evento
-  -associar uma marca
- -Um organizador pode:
-  -fazer a validação de candidaturas de comerciante
-  -criar feiras informais, coorporativas e mistas
-  -remover uma feira
-  -validar um produto
-  -beneficiar patrocinadores
-  -fazer a validação de candidaturas de participação
-  -fazer a validação da associação de marca
+- Um utilizador pode visualizar o cartaz de feira
+- Um visitante pode:
+  - registar uma conta fornecendo ao sistema o seu nome, username, password, email
+  - autenticar-se com os dados da sua conta (username e password)
+- Um utilizador autenticado pode: 
+  - visitar uma feira
+  - visitar uma banca
+  - adicionar produtos ao carrinho
+  - fazer a compra de produtos
+- Um cliente pode fazer uma candidatura de comerciante
+- Um comerciante pode:
+  - adicionar produto á sua banca
+  - fazer candidatura de participação
+  - patrocinar evento
+  - associar uma marca
+ - Um organizador pode:
+  - fazer a validação de candidaturas de comerciante
+  - criar feiras informais, coorporativas e mistas
+  - remover uma feira
+  - validar um produto
+  - beneficiar patrocinadores
+  - fazer a validação de candidaturas de participação
+  - fazer a validação da associação de marca
   
-Nota: 
+**Nota:** 
 - **Feiras informais** (onde apenas se aceita a participação de comerciantes individuais) 
 - **Feiras corporativas** (onde se econtram apenas marcas registadas)
 - **Feiras mistas** (onde se encontram ambas marcas registadas e individuais)
   
 ### Não Funcionais:
 
-  -O utilizador necessita de estar conectado à internet
+  - O utilizador necessita de estar conectado à internet
   
 ## Requisitos de Sistema:
 
 ### Funcionais:
 
-  -O sistema faz a reserva de produtos que se encontram no carrinho.
-  -O sistema deve ser capaz de fazer uma listagem e registo de produtos em stock.
-  -O sistema deve guardar os registos das contas, para poderem ser autenticadas.
+  - O sistema faz a reserva de produtos que se encontram no carrinho.
+  - O sistema deve ser capaz de fazer uma listagem e registo de produtos em stock.
+  - O sistema deve guardar os registos das contas, para poderem ser autenticadas.
   
 ### Não Funcionais:
 
@@ -142,9 +142,9 @@ Nota:
   - A plataforma deve estar funcional todos os dias da semana, 24 horas por dia
   - A plataforma deverá ser acessível, com um layout simples e intuitivo
  
-	-Desempenho
-	-Usabilidade
-	-Segurança
-	-Disponibilidade
-	-Manutenção
-	-Confiabilidade
+	- Desempenho
+	- Usabilidade
+	- Segurança
+	- Disponibilidade
+	- Manutenção
+	- Confiabilidade
