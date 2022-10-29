@@ -93,6 +93,7 @@ ________________________________________________________________________________
 ## Requisitos de Utilizador:
 
 ### Funcionais:
+
 -Um utilizador pode visualizar o cartaz de feira
 -Um visitante pode:
   -registar uma conta fornecendo ao sistema o seu nome, username, password, email
@@ -123,16 +124,19 @@ Nota:
 - **Feiras mistas** (onde se encontram ambas marcas registadas e individuais)
   
 ### Não Funcionais:
+
   -O utilizador necessita de estar conectado à internet
   
 ## Requisitos de Sistema:
 
 ### Funcionais:
+
   -O sistema faz a reserva de produtos que se encontram no carrinho.
   -O sistema deve ser capaz de fazer uma listagem e registo de produtos em stock.
   -O sistema deve guardar os registos das contas, para poderem ser autenticadas.
   
 ### Não Funcionais:
+
   - O sistema deve ter a implementação de uma vista por categorias
   - O sistema deverá ter um processamento rápido e de curta resposta
   - A plataforma deve estar funcional todos os dias da semana, 24 horas por dia
