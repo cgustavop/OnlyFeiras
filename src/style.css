@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    block-size: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+.body {
+    background-color: #F2F2F2;
+}
+
+.content {
+    padding-left: 14%;
+    padding-right: 14%;
+}
+
+.topnav {
+    max-width: 100vw;
+    height: 89px;
+    left: 0px;
+    top: 0px;
+    background-color: #ffffff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 60%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.topnav a {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.auth {
+    align-self: left;
+    overflow: hidden;
+}
+
+.grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.auth a {
+    text-align: right;
+    text-decoration: none;
+}
+
+.auth a:hover {
+    color: grey;
+}
+
+.auth button {
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.auth button:hover {
+    color: #00AFF0;
+}
+
+.txt-small {
+    font-size: smaller;
+}
+
+.txt-small {
+    font-size: medium;
+}
+
+.txt-mid {
+    font-size: 14px;
+}
+
+.txt-mid2 {
+    font-size: 28px;
+}
+
+.txt-big {
+    font-size: 34px;
+}
+
+.white {
+    color: #FFFFFF;
+}
+
+.black {
+    color: #000000;
+}
+
+.blue {
+    color: #00AFF0;
+}
+
+.destaque {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    align-self: center;
+    height: 30vh;
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 45px;
+    background-image: linear-gradient(98.1deg, #00AFF0 0%, rgba(217, 217, 217, 0) 56.23%), url("assets/shoes.jpg");
+    background-size: 130%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    animation-name: destaque-hoverout-img;
+    animation-duration: 0.5s;
+    background-size: 130%;
+}
+
+@keyframes destaque-hover-img {
+    from {
+        background-size: 130%;
+    }
+    to {
+        background-size: 102%;
+    }
+}
+
+@keyframes destaque-hoverout-img {
+    from {
+        background-size: 102%;
+    }
+    to {
+        background-size: 130%;
+    }
+}
+
+.destaque:hover {
+    animation-name: destaque-hover-img;
+    animation-duration: 0.5s;
+    background-size: 102%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 21px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.feira {
+    cursor: pointer;
+}
+
+.feira-top {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    align-self: center;
+    max-width: 20vw;
+    min-height: 18vh;
+    height: 10vh;
+    background: #FFFFFF;
+    border-radius: 15px 15px 0px 0px;
+    padding-left: 20px;
+    padding-top: 20px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow: hidden;
+    animation-name: destaque-hoverout-img;
+    animation-duration: 0.5s;
+    background-size: 130%;
+}
+
+.feira-top:hover {
+    animation-name: destaque-hover-img;
+    animation-duration: 0.5s;
+    background-size: 102%;
+}
+
+.feira-bottom {
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    align-self: center;
+    max-width: 20vw;
+    max-height: 15vh;
+    background: #FFFFFF;
+    border-radius: 0px 0px 15px 15px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.wheight600 {
+    font-weight: 600;
+    padding-right: 30px;
+}
+
+.tipo {
+    font-size: 12px;
+    color: #828282;
+}
+
+.data {
+    font-weight: 600;
+    font-size: 16px;
+    color: #000000;
+}
+
+.pill-small {
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #00AFF0;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 10px 10px 10px 10px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 16px;
+}
+
+.align-h {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.filters {
+    padding-left: 10px;
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.filters button {
+    border: none;
+    font-size: 16px;
+    color: #828282;
+    cursor: pointer;
+}
+
+.filters .selected {
+    border-bottom: 3px solid #00AFF0;
+}
+
+.filters .selected button {
+    font-weight: 600;
+    color: #00AFF0;
+}
+
+button:hover {
+    opacity: 80%;
+}
+
+footer {
+    background-color: #ffffff;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 14%;
+    padding-right: 14%;
+}
+
+.load {
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
