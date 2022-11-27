@@ -104,7 +104,7 @@
 - Utilizador pretende remover um produto no seu carrinho de compras
 
 ### Cenários:
-1. O Vasco queria remover o serviço de pintar o seu carro, pois não acho mais que era uma boa ideia. Como tal, ele clicou no icon do carrinho e clicou em "Remover" no produto pretendido. A página deu reload e Vasco notou que já não estava lá o produto.
+1. O Vasco queria remover o serviço de pintar o seu carro, pois não achou mais que era uma boa ideia. Como tal, ele clicou no icon do carrinho e clicou em "Remover" no produto pretendido. A página deu reload e Vasco notou que já não estava lá o produto.
 
 ### Mockups de referência:
 - Carrinho de Compras
@@ -127,7 +127,7 @@
 - Utilizador pretende comprar todos os produtos que foi adicionando ao seu carrinho
 
 ### Cenários:
-1. O Tiago decidiu comprar os produtos que tinha adicionado ao carrinho, então clicou no icon do carrinho de compras e verificou que tinha lá dois artigos e dois um serviço e que o preço dos produtos era de 100 euros e decidiu continuar com a compra clicando em "Validar Cesto". De seguida reparou que o custo da entrega, que é adicionado ao preço total, era de 10 euros, tornando o preço total a 110 euros e confirmando o pagamento clicando em "Pagar". Foi-lhe apresentado os detalhes da sua encomenda, e agora o Tiago está à espera que os comerciantes o contactem sobre o serviço e sobre a encomenda dos dois artigos.
+1. O Tiago decidiu comprar os produtos que tinha adicionado ao carrinho, então clicou no icon do carrinho de compras e verificou que tinha lá dois artigos e um serviço e que o preço dos produtos era de 100 euros e decidiu continuar com a compra clicando em "Validar Cesto". De seguida reparou que o custo da entrega, que é adicionado ao preço total, era de 10 euros, tornando o preço total a 110 euros e confirmando o pagamento clicando em "Pagar". Foi-lhe apresentado os detalhes da sua encomenda, e agora o Tiago está à espera que os comerciantes o contactem sobre o serviço e sobre a encomenda dos dois artigos.
 
 ### Mockups de referência:
 - Carrinho de Compras
@@ -146,6 +146,11 @@
 5. Sistema calcula o custo de entrega
 6. Utilizador vê o custo dos produtos mais o custo de entrega e clica em "Pagar"
 7. Sistema confirma o pagamento, enviando uma notificação aos comerciantes dos respetivos produtos para o seu menu de encomendas, e esvaziando o carrinho de compras do utilizador 
+
+### Fluxo alternativo(1)[Cliente não tem morada registada]
+4.1 Utilizador fornece morada
+4.2 Sistema guarda a morada nos dados do utilizador
+4.2 Regressa a 4
 
 ### Fluxo exceção(1)[Carrinho Vazio](passo 4):
 4.1 Sistema verifica que o carro está vazio
@@ -196,7 +201,7 @@
 
 ### Fluxo normal:
 1. Utilizador clica em "Adicionar produto"
-2. Utilizador carrega uma foto do produto, escreve uma descrição, seleciona o tipo do produto como "Artigo" e dá o preço e o stock do produto
+2. Utilizador carrega uma foto do produto, escreve um nome, uma descrição, seleciona o tipo do produto como "Artigo" e dá o preço e o stock do produto
 3. Sistema verifica que todos os campos foram preenchidos
 4. Sistema verifica que o preço está no formato de número e que não passa das duas casas decimais e que o stock está no formato de um número inteiro
 5. Sistema adiciona o produto à banca pessoal do utilizador
@@ -216,7 +221,7 @@
 2.2 Sistema verifica que todos os campos foram preenchidos
 2.3 Salta para 5
 
-### Fluxo alternativo(1)[Falta de campos preenchidos](passo 2.2):
+### Fluxo alternativo(4)[Falta de campos preenchidos](passo 2.2):
 2.2.1 Sistema verifica que nem todos os campos foram preenchidos e salienta os campos que falta preencher
 2.2.2 Utilizador preenche os campos em falta
 2.2.3 Regressa a 2.2
