@@ -63,7 +63,7 @@
 - Utilizador adiciona o produto pretendido ao carrinho
 
 ### Cenários:
-1. O Gustavo estava a ver a banca da "Par de Solas", na feira "Expo Calçado e Materias", e viu uns pares de sapatos azuis que gostava de comprar para si e para o seu irmão, portanto clicou no produto e viu que estavam dois em stock, portanto selecionou "2" na quantidade pretendida e clicou em "Adicionar ao carrinho", e, consequentemente, foi levado para a página do seu carrinho, agora com dois pares de sapatos azuis novos.
+1. O Gustavo estava a ver a banca da "Par de Solas", na feira "Expo Calçado e Materias", e viu uns pares de sapatos azuis que gostava de comprar para si e para o seu irmão, portanto clicou no produto e viu que estavam dois em stock, selecionou "2" na quantidade pretendida e clicou em "Adicionar ao carrinho", e, consequentemente, foi levado para a página do seu carrinho, agora com dois pares de sapatos azuis novos.
 2. O Gustavo queria comprar dois pares de sapatos azuis mas só havia 1 em stock, mesmo assim selecionou "1" na quantidade pretendida e clicou em "Adicionar ao carrinho" resultando num aviso de adição impossibilitada.
 
 ### Mockups de referência:
