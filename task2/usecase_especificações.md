@@ -137,18 +137,18 @@
 - Carrinho de compras vazio e os comerciantes, dos respetivos produtos comprados, notificados
 
 ### Fluxo normal:
-3. Utilizador clica em "Validar o cesto"
-4. Sistema notifica os comerciantes de todos os produtos do tipo serviço enviando-lhes mais uma encomenda no seu menu de encomendas
-5. Sistema calcula o custo de entrega
-6. Utilizador vê o custo dos produtos mais o custo de entrega e clica em "Pagar"
-7. Sistema confirma o pagamento, enviando uma notificação aos comerciantes dos respetivos produtos para o seu menu de encomendas, e esvaziando o carrinho de compras do utilizador 
+1. Utilizador clica em "Validar o cesto"
+2. Sistema notifica os comerciantes de todos os produtos do tipo serviço enviando-lhes mais uma encomenda no seu menu de encomendas
+3. Sistema calcula o custo de entrega
+4. Utilizador vê o custo dos produtos mais o custo de entrega e clica em "Pagar"
+5. Sistema confirma o pagamento, enviando uma notificação aos comerciantes dos respetivos produtos para o seu menu de encomendas, e esvaziando o carrinho de compras do utilizador 
 
 ### Fluxo alternativo(1)[Cliente não tem morada registada]
 4.1 Utilizador fornece morada
 4.2 Sistema guarda a morada nos dados do utilizador
 4.2 Regressa a 4
 
-### Fluxo exceção(1)[Carrinho Vazio](passo 4):
+### Fluxo exceção(2)[Carrinho Vazio](passo 4):
 4.1 Sistema verifica que o carro está vazio
 4.2 Sistema avisa que o carro está vazio
 
