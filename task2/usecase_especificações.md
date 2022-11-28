@@ -63,12 +63,12 @@
 - Utilizador adiciona o produto pretendido ao carrinho
 
 ### Cenários:
-1. O Gustavo estava a ver a banca da "Par de Solas", na feira "Expo Calçado e Materias", e viu uns pares de sapatos azuis que gostava de comprar para si e para o seu irmão, portanto clicou no produto e viu que estavam dois em stock, portanto selecionou "2" na quantidade pretendida e clicou em "Adicionar ao carrinho", e, consequentemente, foi levado para a página do seu carrinho, agora com dois pares de sapatos azuis novos.
+1. O Gustavo estava a ver a banca da "Par de Solas", na feira "Expo Calçado e Materias", e viu uns pares de sapatos azuis que gostava de comprar para si e para o seu irmão, portanto clicou no produto e viu que estavam dois em stock, selecionou "2" na quantidade pretendida e clicou em "Adicionar ao carrinho", e, consequentemente, foi levado para a página do seu carrinho, agora com dois pares de sapatos azuis novos.
 2. O Gustavo queria comprar dois pares de sapatos azuis mas só havia 1 em stock, mesmo assim selecionou "1" na quantidade pretendida e clicou em "Adicionar ao carrinho" resultando num aviso de adição impossibilitada.
 
 ### Mockups de referência:
-- Banca - Vista Visitante
-- Carrinho de Compras
+- Banca de Feira
+- Produto - vista utilizador
 
 ### Pré-condição:
 - Utilizador autenticado e na página de uma banca de uma feira.
@@ -81,7 +81,6 @@
 2. Utilizador seleciona a quantidade pretendida desse produto e clica no botão "Adicionar ao carrinho"
 3. Sistema verifica que a quantidade pretendida é igual ou menor que a quantidade de stock desse produto
 4. Sistema adiciona os produtos ao carrinho do utilizador, tirando-os de stock e reservando-os durante 30 minutos, tirando-os do carrinho e voltando a pô-los em stock se estes produtos não tiverem sido comprados durante esse espaço de tempo
-5. Sistema mostra o carrinho de compras do cliente já com os novos produtos adicionados
 
 ### Fluxo alternativo(1)[Tipo de produto "Serviço"](passo 1):
 1.1 Utilizador clica no produto do tipo serviço que pretende comprar
@@ -89,7 +88,7 @@
 1.3 Sistema adiciona o produto ao carrinho do utilizador
 1.4 Salta para 5
 
-### Fluxo exceção(2)[Quantidade pretendida maior que a quantidade de stock](passo 3):
+### Fluxo exceção(2)[Quantidade pretendida > quantidade de stock](passo 3):
 3.1 Sistema verifica que a quantidade pretendida é maior que a quantidade de stock desse produto
 3.2 Sistema cancela a adição do produto no carrinho do utilizador e mostra um aviso de adição impossibilitada
 
@@ -138,18 +137,18 @@
 - Carrinho de compras vazio e os comerciantes, dos respetivos produtos comprados, notificados
 
 ### Fluxo normal:
-3. Utilizador clica em "Validar o cesto"
-4. Sistema notifica os comerciantes de todos os produtos do tipo serviço enviando-lhes mais uma encomenda no seu menu de encomendas
-5. Sistema calcula o custo de entrega
-6. Utilizador vê o custo dos produtos mais o custo de entrega e clica em "Pagar"
-7. Sistema confirma o pagamento, enviando uma notificação aos comerciantes dos respetivos produtos para o seu menu de encomendas, e esvaziando o carrinho de compras do utilizador 
+1. Utilizador clica em "Validar o cesto"
+2. Sistema notifica os comerciantes de todos os produtos do tipo serviço enviando-lhes mais uma encomenda no seu menu de encomendas
+3. Sistema calcula o custo de entrega
+4. Utilizador vê o custo dos produtos mais o custo de entrega e clica em "Pagar"
+5. Sistema confirma o pagamento, enviando uma notificação aos comerciantes dos respetivos produtos para o seu menu de encomendas, e esvaziando o carrinho de compras do utilizador 
 
 ### Fluxo alternativo(1)[Cliente não tem morada registada]
 4.1 Utilizador fornece morada
 4.2 Sistema guarda a morada nos dados do utilizador
 4.2 Regressa a 4
 
-### Fluxo exceção(1)[Carrinho Vazio](passo 4):
+### Fluxo exceção(2)[Carrinho Vazio](passo 4):
 4.1 Sistema verifica que o carro está vazio
 4.2 Sistema avisa que o carro está vazio
 
