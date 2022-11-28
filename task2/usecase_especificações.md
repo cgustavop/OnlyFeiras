@@ -88,7 +88,7 @@
 1.3 Sistema adiciona o produto ao carrinho do utilizador
 1.4 Salta para 5
 
-### Fluxo exceção(2)[Quantidade pretendida maior que a quantidade de stock](passo 3):
+### Fluxo exceção(2)[Quantidade pretendida > quantidade de stock](passo 3):
 3.1 Sistema verifica que a quantidade pretendida é maior que a quantidade de stock desse produto
 3.2 Sistema cancela a adição do produto no carrinho do utilizador e mostra um aviso de adição impossibilitada
 
