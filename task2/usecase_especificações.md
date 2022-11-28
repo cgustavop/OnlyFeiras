@@ -67,7 +67,8 @@
 2. O Gustavo queria comprar dois pares de sapatos azuis mas só havia 1 em stock, mesmo assim selecionou "1" na quantidade pretendida e clicou em "Adicionar ao carrinho" resultando num aviso de adição impossibilitada.
 
 ### Mockups de referência:
-- Produto - Vista Visitante
+- Banca de Feira
+- Produto - vista utilizador
 
 ### Pré-condição:
 - Utilizador autenticado e na página de uma banca de uma feira.
