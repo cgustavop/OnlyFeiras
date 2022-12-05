@@ -1,0 +1,24 @@
+﻿<div class="topnav">
+        <a href="OnlyFeiras"><img src="assets/logo.svg" alt="OnlyFeiras" width="217" height="63"></a>
+
+        <AuthorizeView>
+            <Authorized>
+                <div class="auth grid-container">
+                    <a class="black txt-mid" href="Identity/Account/Manage">Hello, @context.User.Identity.Name!</a>
+                    <form method="post" action="Identity/Account/LogOut">
+                        <button type="submit" class="blue txt-smaller">Log out</button>
+                    </form>
+                </div>
+            </Authorized>
+            <NotAuthorized>
+                <div class="grid-container">
+                    <a class="black txt-mid" href="Identity/Account/Login">Entrar</a>
+                    <a class="blue txt-smaller" href="Identity/Account/Register">Registar</a>
+                </div>
+            </NotAuthorized>
+        </AuthorizeView>
+</div>
+
+@code {
+
+}
