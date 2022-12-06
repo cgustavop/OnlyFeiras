@@ -15,21 +15,25 @@
 
 <body class="body">
     
-    <div>
-        <div class="half_screen_left"> 
-            <img class="half_screen_image" src="assets/bag.jpg" alt="Página de Log In">
+    <div class="main_login">
+        <div class="half_screen_left" > 
+            <img src="assets/bag.jpg" style="margin-left: 50vw;"alt="Página de Log In">
         </div>
         <div class="half_screen_right">
-            <div class="centered-menu">
+            <div class="centered_menu">
                 <a href="index.html"><img src="assets/logo.svg" alt="OnlyFeiras" width="121" height="35"></a>
                 
-                <form action="/src/index.html">
-                    <label for="femail">E-mail:</label>
-                    <input type="text" id="femail" name="femail"><br><br>
-                    <label for="lpass">Palavra-passe:</label>
-                    <input type="text" id="lpass" name="lpass"><br><br>
-                    <input type="submit" value="Entrar">
-                  </form>
+                <form action="/src/login.html">
+                    <h1>Log In</h1>
+                    <label style="font-weight: 600;">Email</label>
+                    <input type="email" class="ins" id="femail" name="femail" placeholder="Email" autocomplete="off"><br><br>
+                    <label style="font-weight: 600;">Palavra-passe</label>
+                    <input type="password" class="ins" id="lpass" name="lpass" placeholder="Password" autocomplete="off"><br><br>
+                    <div class="out">
+                        <label for="register" style="color:#B6B6B6;">Não tens conta? <a href="register.html" style="text-decoration: none; color: #00AFF0">Regista-te</a></label>
+                        <a href="index.html"><input type="button" id="blue_button" value="Entrar"></a>
+                    </div>
+                </form>
             </div>
         </div>      
    </div>
