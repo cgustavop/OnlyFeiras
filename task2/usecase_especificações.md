@@ -496,7 +496,11 @@
 - Feira adicionada nos feiravoritos
 
 ### Fluxo normal:
-1. Utilizador clica no icon estrela presente em qualquer página
+1. Utilizador clica no icon da estrela não preenchida correspondente à feira que pretende adicionar
+2. Sistema adiciona a feira pretendida aos feiravoritos do utilizador
+
+---
+
 
 
 
