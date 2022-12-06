@@ -6,13 +6,15 @@
 
 ### Descrição:
 - Comerciante cria código promocional referente a um dos seus produtos
+- Adição de um produto-comerciante
 - Produtos - comerciante
 
 ### Cenários:
-1. O Jorge queria vender um produto a um preço mais barato para um dos seus clientes, para isso ele foi consultar os seus produtos, na sua banca pessoal, e selecionou o produto que pretendia descontar, deu o número que pretende descontar e clicou em "Criar código promocional". Depois, através dos contactos fornecidos pelo cliente, deu o código promocional ao cliente para que ele podesse ter o desconto no produto.
+1. O Jorge queria vender um produto a um preço mais barato para um dos seus clientes, para isso ele foi consultar os seus produtos, na sua banca pessoal, selecionou o produto que pretendia descontar e clicou em "Ver", deu o número que pretende descontar e clicou em "Criar código promocional". Depois, através dos contactos fornecidos pelo cliente, deu o código promocional ao cliente para que ele podesse ter o desconto no produto.
 
 ### Mockups de referência:
 - Produto - vista comerciante
+- 
 
 ### Pré-condição:
 - Utilizador autenticado e na página de "consulta de produto"
@@ -21,7 +23,7 @@
 - Novo código promocional gerado
 
 ### Fluxo normal:
-1. Utilizador seleciona o produto que pretende descontar
+1. Utilizador seleciona o produto que pretende descontar clicando em "Ver"
 2. Utilizador escolhe a quantidade do desconto e clica no botão "Criar código promocional"
 3. Sistema verifica que a quantidade do desconto não é maior que o preço do produto
 
@@ -299,7 +301,7 @@
 
 ### Mockups de referência:
 - Produtos-comerciante
-- Adição de um produto-comerciante
+- Adição/edição de um produto-comerciante
 
 ### Pré-condição:
 - Utilizador autenticado e na página da banca pessoal
@@ -336,6 +338,53 @@
 
 ---
 
+## Edição de Produto
+
+### Descrição:
+- Utilizador a um produto à sua banca pessoal
+
+### Cenários:
+1. 
+
+### Mockups de referência:
+- Produtos-comerciante
+- Adição/edição de um produto-comerciante
+
+### Pré-condição:
+- Utilizador autenticado e na página da banca pessoal
+
+### Pós-condição:
+- Produto editado
+
+### Fluxo normal:
+1. Utilizador clica em "Adicionar produto"
+2. Utilizador carrega uma foto do produto, escreve um nome, uma descrição e dá o preço e o stock do produto
+3. Sistema verifica que todos os campos estão preenchidos
+4. Sistema verifica que o preço está no formato de número e que não passa das duas casas decimais e que o stock está no formato de um número inteiro
+5. Sistema altera dados do produto
+
+### Fluxo alternativo(1)[Falta de campos preenchidos](passo 3):
+3.1 Sistema verifica que nem todos os campos estão preenchidos e salienta os campos que falta preencher
+3.2 Utilizador preenche os campos em falta
+3.3 Regressa a 3
+
+### Fluxo alternativo(2)[Formato de preço e stock errados](passo 4):
+4.1 Sistema verifica que o preço não está no formato de número ou que passa das duas casas decimais ou que o stock está no formato de um número inteiro, salientado os campos que estiverem no formato errado
+4.2 Utilizador preenche os campos de preço e de stock com o formato certo
+4.3 Regressa a 4
+
+### Fluxo alternativo(3)[tipo de produto como "Serviço"](passo 2):
+2.1 Utilizador carrega uma foto do produto e escreve uma descrição
+2.2 Sistema verifica que todos os campos foram preenchidos
+2.3 Salta para 5
+
+### Fluxo alternativo(4)[Falta de campos preenchidos](passo 2.2):
+2.2.1 Sistema verifica que nem todos os campos foram preenchidos e salienta os campos que falta preencher
+2.2.2 Utilizador preenche os campos em falta
+2.2.3 Regressa a 2.2
+
+---
+
 ## Remoção de Produto à Banca
 
 ### Descrição:
@@ -346,6 +395,7 @@
 
 ### Mockups de referência:
 - Produtos-comerciante
+- Adição/edição de um produto - comerciante
 
 ### Pré-condição:
 - Utilizador autenticado e na página da banca pessoal
@@ -355,7 +405,7 @@
 - Produto Removido da banca pessoal
 
 ### Fluxo normal:
-1.
+1. 
 
 ---
 
@@ -371,14 +421,7 @@
 - Definições de conta - Usuário Cadastrado
 - Definições de conta - Usuário com marca registada
 
-### Pré-condição:
-- Utilizador autenticado
 
-### Pós-condição:
-- Utilizador presente na página de definição de conta
-
-### Fluxo normal:
-1. Utilizador clica no seu próprio icon ou nome, presente em qualquer página
 
 ---
 
@@ -411,7 +454,52 @@
 
 ---
 
-(Pensar melhor nos use cases dos feiravoritos)
+## Consultar Feiravoritos
+
+### Descrição:
+- Utilizador consulta os seus feiravoritos
+
+### Cenários:
+1.
+
+### Mockups de referência:
+- Feiravoritos
+
+### Pré-condição:
+- Utilizador autenticado
+
+### Pós-condição:
+- Utilizador presente na página de feiravoritos
+
+### Fluxo normal:
+1. Utilizador clica no icon estrela presente em qualquer página
+
+---
+
+## Adicionar a Feiravoritos
+
+### Descrição:
+- Utilizador adiona feira aos feiravoritos
+
+### Cenários:
+1.
+
+### Mockups de referência:
+- Página Inicial - Usuário Cadastrado
+- Feira por decorrer
+- Feira a decorrer
+
+### Pré-condição:
+- Utilizador autenticado e presente na página inicial ou na página de uma feira
+
+### Pós-condição:
+- Feira adicionada nos feiravoritos
+
+### Fluxo normal:
+1. Utilizador clica no icon estrela presente em qualquer página
+
+
+
 
 
 
