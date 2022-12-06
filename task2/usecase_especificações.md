@@ -1,5 +1,36 @@
 # Especificação dos Use Cases
 
+---
+
+## Gerar códigos promocionais
+
+### Descrição:
+- Comerciante cria código promocional referente a um dos seus produtos
+- Produtos - comerciante
+
+### Cenários:
+1. O Jorge queria vender um produto a um preço mais barato para um dos seus clientes, para isso ele foi consultar os seus produtos, na sua banca pessoal, e selecionou o produto que pretendia descontar, deu o número que pretende descontar e clicou em "Criar código promocional". Depois, através dos contactos fornecidos pelo cliente, deu o código promocional ao cliente para que ele podesse ter o desconto no produto.
+
+### Mockups de referência:
+- Produto - vista comerciante
+
+### Pré-condição:
+- Utilizador autenticado e na página de "consulta de produto"
+
+### Pós-condição:
+- Novo código promocional gerado
+
+### Fluxo normal:
+1. Utilizador seleciona o produto que pretende descontar
+2. Utilizador escolhe a quantidade do desconto e clica no botão "Criar código promocional"
+3. Sistema verifica que a quantidade do desconto não é maior que o preço do produto
+
+### Fluxo exceção(1)[Desconto > preço do produto](passo 3):
+3.1 Sistema verifica que a quantidade do desconto é maior que o preço do produto
+3.2 Sistema cancela a criação de código promocional do produto e mostra um aviso de adição impossibilitada
+
+---
+
 ## Registo de Empresa
 
 ### Descrição:
@@ -33,6 +64,87 @@
 
 ---
 
+## Envio de candidatura de participação
+
+### Descrição:
+- Utilizador preenche a candidatura de participação, com os produtos pretendidos, uma descrição e uma imagem, para poder participar numa feira 
+
+### Cenários:
+1. O Gustavo pretende participar na feira "Expo calçados e Materiais" para vender os seus sapatos. Para isso, ele clicou no botão de "Participar", presente na página da "Expo calçados e Materiais" ainda por decorrer, selecionou os sapatos na sua banca pessoal, escreveu uma descrição "Por favor comprem os meus sapatos, eu preciso de dinheiro" e uma imagem dos seus sapatos. Gustavo clica em "Submeter" e recebe um aviso a dizer "O teu registo foi submetido com sucesso! Irás receber um email assim que este for aprovado".
+2. O Gustavo, ao selecionar os sapatos na sua banca pessoal, reparou que tem muitos sapatos para vender, por isso decidiu patrocionar a feira "Expo calçados e Materiais" para poder selecionar mais produtos na candidatura.
+
+### Mockups de referência:
+- Feira por decorrer
+- Cadidatura a feira aka criação de banca - comerciante
+
+### Pré-condição:
+- Utilizador autenticado e presenta na página de uma feira por decorrer
+
+### Pós-condição:
+- Nova candidatura de participação enviada para os Organizadores
+
+### Fluxo normal:
+1. Utilizador clica em "Participar"
+2. Utilizador seleciona os produtos, da sua banca pessoal, que pretende levar para a feira (no máximo 15)
+3. Utilizador fornece uma descrição e uma imagem para a nova banca (opcional)
+4. Utilizador clica em "Submeter"
+5. Sistema guarda a candidatura de participação e envia-a para os Organizadores, para poderem validá-la
+
+### Fluxo alternativo(1)[Patrocina](passo 1):
+1.1 Utilizador seleciona a opção de ser patrocinador
+1.2 Utilizador seleciona os produtos, da sua banca pessoal, que pretende levar para a feira (no máximo 15)
+1.3 Utilizador fornece uma descrição e uma imagem para a nova banca (opcional)
+1.4 Utilizador clica em "Submeter" e paga os 50 euros
+1.5 Salta para 5
+
+---
+
+## Visita Feira
+
+### Descrição:
+- Utilizador visita uma banca
+
+### Cenários:
+1. 
+
+### Mockups de referência:
+- Página Inicial - Usuário Cadastrado
+- Feira por Decorrer
+- Feira a Decorrer
+
+### Pré-condição:
+- Utilizador autenticado e presente na página inicial
+
+### Pós-condição:
+- Utilizador presente na página de uma feira
+
+### Fluxo normal:
+1. Utilizador clica numa das feiras presentes na página inicial
+
+---
+
+## Visita Banca
+
+### Descrição:
+- Utilizador visita uma banca
+
+### Cenários:
+
+### Mockups de referência:
+- Feira a Decorrer
+- Banca de Feira
+
+### Pré-condição:
+- Utilizador autenticado e presente na página de uma feira a decorrer
+
+### Pós-condição:
+- Utilizador presente na página de uma banca
+
+### Fluxo normal:
+1. Utilizador clica no icon de um dos participantes de uma feira
+
+---
+
 ## Consultar Carrinho
 
 ### Descrição:
@@ -53,7 +165,7 @@
 ### Fluxo normal:
 1. Utilizador clica no icon do carrinho de compras, presente em todas as páginas desde que esteja autenticado
 2. Sistema calcula o preço de todos os produtos no carrinho do utilizador
-3. Utilizador vê todos os produtos que tem no carrinho, o preço total de todos os produtos e, caso seja um artigo, o tempo que tem até sair do carrinho 
+3. Utilizador vê todos os produtos que tem no carrinho, o preço total de todos os produtos e, caso seja um artigo, o tempo que tem até sair do carrinho
 
 ---
 
@@ -154,7 +266,7 @@
 
 ---
 
-## Visita Banca
+## Consulta Banca Pessoal
 
 ### Descrição:
 - Utilizador pretende aceder à sua banca pessoal
@@ -236,41 +348,70 @@
 - Produtos-comerciante
 
 ### Pré-condição:
-- 
+- Utilizador autenticado e na página da banca pessoal
+
 
 ### Pós-condição:
-- 
+- Produto Removido da banca pessoal
 
 ### Fluxo normal:
 1.
 
 ---
 
-## Envio de candidatura de participação
+## Definição de Conta
 
 ### Descrição:
-- Utilizador pretende participar numa feira criando, assim, uma banca para a feira, podendo dar uma descrição para a banca e uma fotografia, e adicionar produtos da sua banca pessoal para a banca de feira
+- Utilizador vai para a página de definição de conta
 
 ### Cenários:
-1. 
+1.
 
 ### Mockups de referência:
-- Feira por decorrer
-- Candidatura a feira aka criação de banca - comerciante
+- Definições de conta - Usuário Cadastrado
+- Definições de conta - Usuário com marca registada
 
 ### Pré-condição:
-- Utilizador autenticado e na página de uma feira por decorrer
+- Utilizador autenticado
 
 ### Pós-condição:
-- Nova ficha de candidatura de participação entregue para os Organizadores.
+- Utilizador presente na página de definição de conta
 
 ### Fluxo normal:
-1. Utilizador clica no botão "Participar"
-2. Utilizador escreve uma descrição de banca (opcional), fornece uma imagem (opcional) e seleciona os produtos da sua banca pessoal que pretende levar para a banca de feira
-4. Sistema guarda a ficha de candidatura de participação e envia-a para os Organizadores, para poderem validá-la
+1. Utilizador clica no seu próprio icon ou nome, presente em qualquer página
 
 ---
 
+## Alteração de Dados
+
+### Descrição:
+- Utilizador pretende alterar o seu nome de usuário ou morada ou contacto
+
+### Cenários:
+1.
+
+### Mockups de referência:
+- Definições de conta - Usuário Cadastrado
+- Definições de conta - Usuário com marca registada
+
+### Pré-condição:
+- Utilizador autenticado
+
+### Pós-condição:
+- Dados do Utilizador alterados
+
+### Fluxo normal:
+1. Utilizador preenche os campos que pretende alterar, entre "Nome de Usuário" , "Contacto e "Morada" e clica em "Guardar Alterações"
+2. Sistema altera os dados preenchidos desse utilizador
+
+### Fluxo alternativo(2)[Falta de campos preenchidos](passo 3):
+2.1 Sistema verifica que os campos de Morada não estão vazios nem estão todos preenchidos
+2.2 Sistema salienta os campos da Morada que falta preencher
+2.2 Salta para 2
+
+---
+
+(Pensar melhor nos use cases dos feiravoritos)
 
 
 
