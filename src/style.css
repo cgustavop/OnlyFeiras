@@ -100,6 +100,10 @@
     color: #00AFF0;
 }
 
+.grey{
+    color: #B6B6B6;
+}
+
 .destaque {
     display: block;
     margin-left: auto;
@@ -282,4 +286,98 @@ footer {
     align-self: center;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.main_login{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.half_screen_left{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    margin-left: 0px;
+    padding-left: 0px;
+    overflow: hidden;
+}
+
+.half_screen_right{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.centered_menu{
+    display: flex;
+    position: relative;
+    width: 30vw;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    border-radius: 20px;
+}
+
+.centered_menu h1{
+    font-size: 100px;
+    margin-bottom: 5vh;
+}
+
+.centered_menu .ins{
+    width: 30vw;
+    height: 5vh;
+    border-radius: 16px;
+    border-width: 1.5px;
+    color: #B6B6B6;
+    border-color: #B6B6B6;
+    padding: 0 0 0 20px;
+    font-size: 12px;
+    box-shadow: 0;
+}
+/*
+.centered_menu .ins:focus{
+    position: absolute;
+	pointer-events: none;
+	top: 9px;
+	left: 12px;
+	transition: all 0.2s ease;
+}
+*/
+
+.centered_menu label{
+    color:#000000;
+    padding: 0 42.5% 0 20px;
+}
+
+.centered_menu #blue_button{
+    width: 9vw;
+    height: 5vh;
+    border-radius: 28px;
+    border-width: 0;
+    outline: none;
+    letter-spacing: 1px;
+    background: #00AFF0;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 25px;
+}
+
+.centered_menu .ins2{
+    
+}
+
+.out label{
+    padding: 0 42.5% 0 20px;
 }
