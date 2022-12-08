@@ -22,24 +22,35 @@
         <div class="half_screen_right">
             <div class="centered_menu">
                 <a href="index.html"><img src="assets/logo.svg" alt="OnlyFeiras" width="121" height="35"></a>
-                
+                <h1>Sign Up</h1>
                 <form action="/src/register.html">
-                    <h1>Sign Up</h1>
+                    
                     <label style="font-weight: 600;">Nome</label>
                     <input type="text" class ="ins" id="rnome" name="rname" placeholder="Nome" autocomplete="off"><br><br>
                     <label style="font-weight: 600;">Email</label>
                     <input type="email" class="ins" id="femail" name="femail" placeholder="Indica o teu email" autocomplete="off"><br><br>
                     <label style="font-weight: 600;">Palavra-passe</label>
                     <input type="password" class="ins" id="lpass" name="lpass" placeholder="Define uma palavra-passe" autocomplete="off"><br><br>
+                    
+                    
                     <div class="wrapper">
-                        <label style="font-weight: 600;">Data de Nascimento</label>
-                        <input type="date" class="ins2" id="data_nascimento" name="data_nascimento"><br><br>
-                        <label style="font-weight: 600;">Contacto<label style="color: #B6B6B6; text-align: left;">(opcional)</label></label>
-                        <input type="tel" class="ins2" id="telemovel" name="telemovel" placeholder="Nº telemóvel" autocomplete="off"><br><br>
+                        <div>
+                            <label style="font-weight: 600;">Data de Nascimento</label>
+                            <input class="ins2" type="date" id="data_nascimento" name="data_nascimento"><br><br>
+                        </div>
+                        <div>
+                            <label style="font-weight: 600;">Contacto<span
+                                    style="color: #B6B6B6; text-align: left; padding-left: 4px;">(opcional)</span></label>
+                            <input class="ins2" type="tel" id="telemovel" name="telemovel" placeholder="Nº telemóvel"
+                                autocomplete="off"><br><br>
+                        </div>
                     </div>
+
+
                     <div class="out">
-                        <label for="register" style="color: #B6B6B6;">Já tens conta?  <a href="login.html" style="text-decoration: none; color: #00AFF0;">Log In</a></label>
-                        <a href="login.html"><input type="button" id="blue_button" value="Registar"></input></a>
+                        <label for="register" style="color: #B6B6B6;">Já tens conta? <a href="login.html"
+                                style="text-decoration: none; color: #00AFF0;">Log In</a></label>
+                        <button>Registar</button>
                     </div>
                 </form>
             </div>
