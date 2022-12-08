@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nitro\\dev\\OnlyFeiras\\OnlyFeiras\\OnlyFeiras.csproj": {}
+    "D:\\github\\OnlyFeiras\\OnlyFeiras\\OnlyFeiras.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nitro\\dev\\OnlyFeiras\\OnlyFeiras\\OnlyFeiras.csproj": {
+    "D:\\github\\OnlyFeiras\\OnlyFeiras\\OnlyFeiras.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nitro\\dev\\OnlyFeiras\\OnlyFeiras\\OnlyFeiras.csproj",
+        "projectUniqueName": "D:\\github\\OnlyFeiras\\OnlyFeiras\\OnlyFeiras.csproj",
         "projectName": "OnlyFeiras",
-        "projectPath": "C:\\Users\\Nitro\\dev\\OnlyFeiras\\OnlyFeiras\\OnlyFeiras.csproj",
-        "packagesPath": "C:\\Users\\Nitro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nitro\\dev\\OnlyFeiras\\OnlyFeiras\\obj\\",
+        "projectPath": "D:\\github\\OnlyFeiras\\OnlyFeiras\\OnlyFeiras.csproj",
+        "packagesPath": "C:\\Users\\cafbb\\.nuget\\packages\\",
+        "outputPath": "D:\\github\\OnlyFeiras\\OnlyFeiras\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nitro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cafbb\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -67,10 +67,29 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.31, 3.1.31]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -79,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.413\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
