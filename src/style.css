@@ -295,9 +295,9 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
   
-  .half_screen_left {
+.half_screen_left {
     width: 50vw;
     height: 100vh;
     display: flex;
@@ -308,18 +308,18 @@ footer {
     margin-left: 0px;
     padding-left: 0px;
     overflow: hidden;
-  }
+}
   
-  .half_screen_right {
+.half_screen_right {
     width: 50vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-  }
+}
   
-  .centered_menu {
+.centered_menu {
     display: flex;
     width: 30vw;
     height: 50vh;
@@ -328,14 +328,22 @@ footer {
     flex-direction: column;
     padding: 30px 35px;
     border-radius: 20px;
-  }
+}
   
-  .centered_menu h1 {
+.centered_menu h1 {
     font-size: 100px;
     margin-bottom: 5vh;
-  }
+}
+
+.erro h1{
+    font-size: 75px;
+}
+
+.erro h2{
+    font-size: 20px;
+}
   
-  .centered_menu .ins {
+.centered_menu .ins {
     width: 30vw;
     height: 5vh;
     border-radius: 16px;
@@ -346,14 +354,14 @@ footer {
     padding-left: 20px;
     font-size: 12px;
     box-shadow: 0;
-  }
+}
   
-  .centered_menu label {
+.centered_menu label {
     color: #000000;
     padding-left: 20px;
-  }
+}
   
-  .centered_menu #blue_button {
+.centered_menu #blue_button {
     width: 9vw;
     height: 5vh;
     border-radius: 28px;
@@ -364,9 +372,9 @@ footer {
     cursor: pointer;
     color: #ffffff;
     font-size: 25px;
-  }
+}
   
-  .centered_menu .ins2 {
+.centered_menu .ins2 {
     height: 5vh;
     border-radius: 16px;
     border-width: 1.5px;
@@ -376,26 +384,26 @@ footer {
     padding: 0 20px;
     font-size: 12px;
     box-shadow: 0;
-  }
+}
   
-  .wrapper {
+.wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 8px;
-  }
+}
   
-  .wrapper div input {
+.wrapper div input {
     width: 100%;
-  }
+}
   
-  .out {
+.out {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   
-  .out button {
+.out button {
     width: 148px;
     height: 40px;
     background-color: #00aff0;
@@ -403,4 +411,4 @@ footer {
     border-radius: 20px;
     color: #fff;
     font-size: 20px;
-  }
+}
