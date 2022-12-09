@@ -357,7 +357,7 @@
 - Produto editado
 
 ### Fluxo normal:
-1. Utilizador clica em "Adicionar produto"
+1. Utilizador clica em "Editar" no produto que pretende editar
 2. Utilizador carrega uma foto do produto, escreve um nome, uma descrição e dá o preço e o stock do produto
 3. Sistema verifica que todos os campos estão preenchidos
 4. Sistema verifica que o preço está no formato de número e que não passa das duas casas decimais e que o stock está no formato de um número inteiro
@@ -400,12 +400,12 @@
 ### Pré-condição:
 - Utilizador autenticado e na página da banca pessoal
 
-
 ### Pós-condição:
 - Produto Removido da banca pessoal
 
 ### Fluxo normal:
-1. 
+1. Utilizador clica em "Remover" no produto que pretende remover
+2. Sistema remove todas as instâncias desse produto, presentes na sua banca pessoal e possivelmente em bancas de feira e carrinhos de outros utilizadores 
 
 ---
 
@@ -421,7 +421,14 @@
 - Definições de conta - Usuário Cadastrado
 - Definições de conta - Usuário com marca registada
 
+### Pré-condição:
+- Utilizador autenticado
 
+### Pós-condição:
+- Utilizador presente na página de definição de conta
+
+### Fluxo normal:
+1. Utilizador clica no seu icon ou no seu nome, presente em qualquer página
 
 ---
 
@@ -447,14 +454,14 @@
 1. Utilizador preenche os campos que pretende alterar, entre "Nome de Usuário" , "Contacto e "Morada" e clica em "Guardar Alterações"
 2. Sistema altera os dados preenchidos desse utilizador
 
-### Fluxo alternativo(2)[Falta de campos preenchidos](passo 3):
+### Fluxo alternativo(1)[Falta de campos preenchidos](passo 2):
 2.1 Sistema verifica que os campos de Morada não estão vazios nem estão todos preenchidos
 2.2 Sistema salienta os campos da Morada que falta preencher
 2.2 Salta para 2
 
 ---
 
-## Consultar Feiravoritos
+## Consulta Feiravoritos
 
 ### Descrição:
 - Utilizador consulta os seus feiravoritos
@@ -476,10 +483,10 @@
 
 ---
 
-## Adicionar a Feiravoritos
+## Adiciona a Feiravoritos
 
 ### Descrição:
-- Utilizador adiona feira aos feiravoritos
+- Utilizador adiciona feira aos feiravoritos
 
 ### Cenários:
 1.
@@ -501,9 +508,119 @@
 
 ---
 
+## Remove dos Feiravoritos
 
+### Descrição:
+- Utilizador remove feira dos feiravoritos
 
+### Cenários:
+1.
 
+### Mockups de referência:
+- Página Inicial - Usuário Cadastrado
+- Feira por decorrer
+- Feira a decorrer
+
+### Pré-condição:
+- Utilizador autenticado e presente na página inicial ou na página de uma feira
+
+### Pós-condição:
+- Feira removida dos feiravoritos
+
+### Fluxo normal:
+1. Utilizador clica no icon da estrela preenchida correspondente à feira que pretende remover
+2. Sistema remove a feira pretendida dos feiravoritos do utilizador
+
+---
+
+## Validação de Candidaturas de Participação
+
+### Descrição:
+- Organizador valida uma candidatura de participação
+
+### Cenários:
+1. 
+
+### Mockups de referência:
+- Verificação de cadidaturas - organizador
+- Detalhes de candidatura - organizador
+
+### Pré-condição:
+- Organizador autenticado
+
+### Pós-condição:
+- Candidatura de participação validada ou recusada
+
+### Fluxo normal:
+1. Organizador clica no icon de Candidaturas, presentes em qualquer página de um organizador
+2. Organizador clica em "ver detalhes" de uma das candidaturas
+3. Organizador clica em "Validar"
+4. Sistema adiciona nova banca à feira e envia um email ao utilizador sobre a validação, referentes à candidatura validada
+
+### Fluxo alternativo(1)[Recusa candidatura](passo 3):
+3.1 Organizador clica em "Recusar"
+3.2 Sistema envia um email ao utilizador, referente à candidatura recusada
+
+---
+
+## Validação do registo de empresa
+
+### Descrição:
+- Organizador valida um registo de empresa
+
+### Cenários:
+1. 
+
+### Mockups de referência:
+- Verificação de marcas - organizador
+- Detalhes de registo de empresa - organizador
+
+### Pré-condição:
+- Organizador autenticado
+
+### Pós-condição:
+- Registo de empresa recusado ou validado
+
+### Fluxo normal:
+1. Organizador clica no icon de verificação de marcas, presentes em qualquer página de um organizador
+2. Organizador clica em "ver detalhes" de um dos registos
+3. Organizador clica em "Validar"
+4. Sistema associa a marca e envia um email ao utilizador, referente ao registo de empresa validado
+
+### Fluxo alternativo(1)[Recusa registo de empresa](passo 3):
+3.1 Organizador clica em "Recusar"
+3.2 Sistema envia um email ao utilizador, referente ao registo de empresa recusado
+
+---
+
+## Criação de Feiras
+
+### Descrição:
+- Organizador cria uma nova feira fornecendo o título, a descrição, a fotografia , a data de começo e fim, o tipo e as etiquetas da feira
+
+### Cenários:
+1. 
+
+### Mockups de referência:
+- Dashboard - organizador
+- Criação de feira - organizador
+
+### Pré-condição:
+- Organizador autenticado e presente na página inicial
+
+### Pós-condição:
+- Nova feira criada
+
+### Fluxo normal:
+1. Organizador clica em "Criar feira"
+2. Organizador fornece o "Título" da feira, a "Descrição, a fotografia, a "Data começo"/"Data fim", as "Etiquetas" e o "Tipo"
+3. Sistema verifica que todos os campos foram preenchidos
+4. Sistema guarda a feira
+
+### Fluxo alternativo(1)[Falta de campos preenchidos](passo 3):
+3.1 Sistema verifica que nem todos os campos foram preenchidos e salienta os campos que falta preencher
+3.2 Utilizador preenche os campos em falta
+3.3 Regressa a 3
 
 
 
