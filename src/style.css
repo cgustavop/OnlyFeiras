@@ -361,19 +361,6 @@ footer {
     padding-left: 20px;
 }
   
-.centered_menu #blue_button {
-    width: 9vw;
-    height: 5vh;
-    border-radius: 28px;
-    border-width: 0;
-    outline: none;
-    letter-spacing: 1px;
-    background: #00aff0;
-    cursor: pointer;
-    color: #ffffff;
-    font-size: 25px;
-}
-  
 .centered_menu .ins2 {
     height: 5vh;
     border-radius: 16px;
@@ -412,3 +399,72 @@ footer {
     color: #fff;
     font-size: 20px;
 }
+
+.line{
+    background-color: #D9D9D9;
+    height: 0.5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.wrapper_cartazfeira{
+    display:flex;
+    justify-content: space-between;
+}
+
+.wrapper_cartazfeira_dt{
+    display: flex;
+    justify-content: space-between; 
+}
+
+.wrapper_cartazfeira_comp{
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper_cartazfeira_comp div p:first-of-type{
+    margin-top: 8px;
+    font-weight: 700;
+}
+
+.wrapper_cartazfeira_right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.wrapper_tags img{
+    margin-left: 12px;
+}
+
+.wrapper_tags{
+    display:flex;
+    flex-direction: row;
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.grid_tagslist{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin: 0 15px;
+}
+
+.grid_tagslist li{
+    border-radius: 28px;
+    color: #828282;
+    border-width: 1.5px;
+    border-style: solid;
+    border-color: #B6B6B6;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 4px 0;
+    font-size: 14px;
+}
+
+
+
