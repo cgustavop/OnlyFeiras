@@ -195,7 +195,6 @@ app {
     justify-content: center;
     display: flex;
     justify-content: space-between;
-    //gap: 60%;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-block-start: 0px;
@@ -207,6 +206,14 @@ app {
         margin-top: auto;
         margin-bottom: auto;
     }
+
+footer {
+    background-color: #ffffff;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 14%;
+    padding-right: 14%;
+}
 
 .auth {
     align-self:end;
@@ -386,4 +393,228 @@ app {
     border: none;
     text-decoration: none;
     cursor: pointer;
+}
+
+.content {
+    padding: 0 11.5%;
+}
+
+.destaque {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    align-self: center;
+    height: 30vh;
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 45px;
+    background-size: 130%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    animation-name: destaque-hoverout-img;
+    animation-duration: 0.5s;
+    background-size: 130%;
+}
+
+@keyframes destaque-hover-img {
+    from {
+        background-size: 130%;
+    }
+
+    to {
+        background-size: 102%;
+    }
+}
+
+@keyframes destaque-hoverout-img {
+    from {
+        background-size: 102%;
+    }
+
+    to {
+        background-size: 130%;
+    }
+}
+
+.destaque:hover {
+    animation-name: destaque-hover-img;
+    animation-duration: 0.5s;
+    background-size: 102%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 21px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.feira {
+    cursor: pointer;
+}
+
+.feira-top {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    align-self: center;
+    max-width: 20vw;
+    min-height: 16vh;
+    height: 10vh;
+    background: #FFFFFF;
+    border-radius: 15px 15px 0px 0px;
+    padding-left: 20px;
+    padding-top: 20px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow: hidden;
+    animation-name: destaque-hoverout-img;
+    animation-duration: 0.5s;
+    background-size: 130%;
+}
+
+    .feira-top:hover {
+        animation-name: destaque-hover-img;
+        animation-duration: 0.5s;
+        background-size: 102%;
+    }
+
+.feira-bottom {
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    align-self: center;
+    max-width: 20vw;
+    max-height: 15vh;
+    background: #FFFFFF;
+    border-radius: 0px 0px 15px 15px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.wheight600 {
+    font-weight: 600;
+    padding-right: 30px;
+}
+
+.tipo {
+    font-size: 12px;
+    color: #828282;
+}
+
+.data {
+    font-weight: 600;
+    font-size: 16px;
+    color: #000000;
+}
+
+.pill-small {
+    border: none;
+    padding: 5px 15px;
+    background-color: #00AFF0;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 10px 10px 10px 10px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 16px;
+}
+
+.align-h {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.filters {
+    padding-left: 10px;
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+    .filters button {
+        border: none;
+        font-size: 16px;
+        color: #828282;
+        cursor: pointer;
+    }
+
+    .filters .selected {
+        border-bottom: 3px solid #00AFF0;
+    }
+
+        .filters .selected button {
+            font-weight: 600;
+            color: #00AFF0;
+        }
+
+button:hover {
+    opacity: 80%;
+}
+
+.footer {
+    background-color: #ffffff;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 14%;
+    padding-right: 14%;
+}
+
+.load {
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.main_login {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.half_screen_left {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    margin-left: 0px;
+    padding-left: 0px;
+    overflow: hidden;
+}
+
+.half_screen_right {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.erro h1 {
+    font-size: 75px;
+}
+
+.erro h2 {
+    font-size: 20px;
 }
