@@ -522,10 +522,7 @@ footer {
 
 .pill-small {
     border: none;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 5px 15px;
     background-color: #00AFF0;
     color: #ffffff;
     font-size: 12px;
