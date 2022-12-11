@@ -780,3 +780,53 @@ footer {
     width: 100%;
     font-size: 18px;
 }
+
+.registo_empresa{
+    margin-top:-20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.registo_empresa_left{
+    display: flex;
+    width: 45%;
+    height: 100vh;
+    overflow: hidden;
+    justify-content:space-around;
+}
+
+.registo_empresa_right{
+    display: flex;
+    width: 55%;
+    border-image-width: 1000px;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 120px;
+}
+
+.registo_empresa_rtext{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.registo_empresa_rtext h1{
+    margin-bottom: 16px;
+}
+
+
+.registo_empresa_rtext button{
+    display: flex;
+    margin-top:38px;
+    align-items: flex-end;
+    justify-content: flex-end;
+    border: none;
+}
+
+.registo_empresa_rsymbol{
+    width: 108px;
+    height: 108px;
+    justify-content: flex-end;
+    margin-left: 56px;
+}
