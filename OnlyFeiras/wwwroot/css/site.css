@@ -12,6 +12,10 @@ html, body {
     padding-right: 20%;
 }
 
+button:focus {
+    outline: 0;
+}
+
 a, .btn-link {
     color: #00AFF0;
 }
@@ -506,6 +510,16 @@ footer {
     overflow: hidden;
 }
 
+    .feira-bottom button {
+        border: none;
+        background: none;
+    }
+
+    .feira-bottom .selected button {
+        border: none;
+        background: none;
+    }
+
 .wheight600 {
     font-weight: 600;
     padding-right: 30px;
@@ -538,6 +552,14 @@ footer {
 .align-h {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.align-v {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
     justify-content: space-between;
     width: 100%;
 }

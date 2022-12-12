@@ -825,3 +825,7 @@ D:\github\OnlyFeiras\OnlyFeiras\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\
 D:\github\OnlyFeiras\OnlyFeiras\obj\Debug\netcoreapp3.1\Razor\Shared\Component.razor.g.cs
 D:\github\OnlyFeiras\OnlyFeiras\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\Footer.razor.g.cs
 D:\github\OnlyFeiras\OnlyFeiras\obj\Debug\netcoreapp3.1\Razor\Shared\Footer.razor.g.cs
+C:\Users\Nitro\dev\OnlyFeiras\OnlyFeiras\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\CardFeira.razor.g.cs
+C:\Users\Nitro\dev\OnlyFeiras\OnlyFeiras\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\Footer.razor.g.cs
+C:\Users\Nitro\dev\OnlyFeiras\OnlyFeiras\obj\Debug\netcoreapp3.1\Razor\Shared\CardFeira.razor.g.cs
+C:\Users\Nitro\dev\OnlyFeiras\OnlyFeiras\obj\Debug\netcoreapp3.1\Razor\Shared\Footer.razor.g.cs
