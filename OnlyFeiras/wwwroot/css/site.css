@@ -18,9 +18,15 @@ button:focus {
 
 a, .btn-link {
     color: #00AFF0;
+    text-decoration: none;
 }
 
-.btn-primary {
+a:hover, .btn-link {
+    color: #00AFF0;
+    text-decoration: none;
+}
+
+btn-primary {
     color: #fff;
     background-color: #1b6ec2;
     border-color: #1861ac;
@@ -341,6 +347,10 @@ footer {
     color: #00AFF0;
 }
 
+.grey {
+    color: #B6B6B6;
+}
+
 .dropbtn {
     background-color: #04AA6D;
     color: white;
@@ -636,4 +646,77 @@ button:hover {
 
 .erro h2 {
     font-size: 20px;
+}
+
+.line {
+    background-color: #D9D9D9;
+    height: 0.5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.wrapper_cartazfeira {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper_cartazfeira_dt {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper_cartazfeira_comp {
+    display: flex;
+    justify-content: space-between;
+}
+
+    .wrapper_cartazfeira_comp div p:first-of-type {
+        margin-top: 8px;
+        font-weight: 700;
+    }
+
+.wrapper_cartazfeira_right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.wrapper_tags {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+    .wrapper_tags img {
+        margin-left: 12px;
+    }
+
+.grid_tagslist_2 {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: 0 15px;
+}
+
+.grid_tagslist_3 {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin: 0 15px;
+}
+
+.grid_tagslist li {
+    border-radius: 28px;
+    color: #828282;
+    border-width: 1.5px;
+    border-style: solid;
+    border-color: #B6B6B6;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 4px 0;
+    font-size: 14px;
 }

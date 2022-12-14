@@ -5,11 +5,15 @@
 </div>
 
 @code {
-    public string imagem { get; set; } = "assets/shoes.jpg";
-
-    public string titulo { get; set; } = "Título Feira";
-
-    public string descricao { get; set; } = "Isto é a descrição da feira, pode ser tão extensa quanto se quiser, embora não dê muito jeito dado o espaço que temos aqui.";
-
-    public string data { get; set; } = "Data da feira";
+    [Parameter]
+    public string imagem { get; set; } = "";
+    
+    [Parameter]
+    public string titulo { get; set; } = "";
+    
+    [Parameter]
+    public string descricao { get; set; } = "";
+    
+    [Parameter]
+    public string data { get; set; } = "";
 }
