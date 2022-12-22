@@ -1,11 +1,6 @@
 ﻿@page "/"
 
-<div class="content">
-    <div class="destaque white">
-        <h1 class="txt-big">Expo Calçado e Materiais</h1>
-        <p class="txt-mid">As melhores marcas estão de volta para te mostrar as novidades e as novas tecnologias do mercado do calçado.</p>
-        <h1>11 a 30 de novembro</h1>
-    </div>
+<Destaque imagem=@imagem titulo=@titulo descricao=@descricao data=@data/>
 
     <div>
         <ul class="filters">
@@ -19,22 +14,27 @@
     </div> 
     <div class="grid">
 
-        <CardFeira />
-        <CardFeira />
-        <CardFeira />
-        <CardFeira />
-        <CardFeira />
-        <CardFeira />
-        <CardFeira />
-        <CardFeira />
+        <CardFeira referencia="/feira"/>
+        <CardFeira referencia="/feira" />
+        <CardFeira referencia="/feira" />
+        <CardFeira referencia="/feira" />
+        <CardFeira referencia="/feira" />
+        <CardFeira referencia="/feira" />
+        <CardFeira referencia="/feira" />
+        <CardFeira referencia="/feira" />
 
 
     </div>
 
     <button class="pill-small load">Carregar mais</button>
 
- </div>
 
 @code{
+    public string imagem { get; set; } = "assets/shoes.jpg";
+    
+    public string titulo { get; set; } = "Título Feira";
+    
+    public string descricao { get; set; } = "Isto é a descrição da feira, pode ser tão extensa quanto se quiser, embora não dê muito jeito dado o espaço que temos aqui.";
 
+    public string data { get; set; } = "Data da feira";
 }

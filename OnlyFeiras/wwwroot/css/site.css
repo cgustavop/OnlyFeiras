@@ -18,9 +18,15 @@ button:focus {
 
 a, .btn-link {
     color: #00AFF0;
+    text-decoration: none;
 }
 
-.btn-primary {
+a:hover, .btn-link {
+    color: #00AFF0;
+    text-decoration: none;
+}
+
+btn-primary {
     color: #fff;
     background-color: #1b6ec2;
     border-color: #1861ac;
@@ -341,6 +347,10 @@ footer {
     color: #00AFF0;
 }
 
+.grey {
+    color: #B6B6B6;
+}
+
 .dropbtn {
     background-color: #04AA6D;
     color: white;
@@ -399,10 +409,6 @@ footer {
     cursor: pointer;
 }
 
-.content {
-    padding: 0 11.5%;
-}
-
 .destaque {
     display: block;
     margin-left: auto;
@@ -413,14 +419,14 @@ footer {
     background: #FFFFFF;
     border-radius: 16px;
     padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 45px;
+    padding-right: 60%;
+    padding-top: 30px;
     background-size: 130%;
     background-repeat: no-repeat;
     background-image: linear-gradient(98.1deg, #00AFF0 0%, rgba(217, 217, 217, 0) 56.23%), url('');
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
     overflow: hidden;
     margin-bottom: 20px;
     animation-name: destaque-hoverout-img;
@@ -473,8 +479,7 @@ footer {
     box-sizing: border-box;
     align-self: center;
     max-width: 20vw;
-    min-height: 16vh;
-    height: 10vh;
+    min-height: 14vh;
     background: #FFFFFF;
     border-radius: 15px 15px 0px 0px;
     background-image: linear-gradient(120deg, #00AFF0 0%, rgba(217, 217, 217, 0) 60%), url('');
@@ -641,4 +646,300 @@ button:hover {
 
 .erro h2 {
     font-size: 20px;
+}
+
+.line {
+    background-color: #D9D9D9;
+    height: 0.5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.wrapper_cartazfeira {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper_cartazfeira_dt {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper_cartazfeira_comp {
+    display: flex;
+    justify-content: space-between;
+}
+
+    .wrapper_cartazfeira_comp div p:first-of-type {
+        margin-top: 8px;
+        font-weight: 700;
+    }
+
+.wrapper_cartazfeira_right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.wrapper_tags {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+    .wrapper_tags img {
+        margin-left: 12px;
+    }
+
+.grid_tagslist_2 {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: 0 15px;
+}
+
+.grid_tagslist_3 {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin: 0 15px;
+}
+
+.grid_tagslist li {
+    border-radius: 28px;
+    color: #828282;
+    border-width: 1.5px;
+    border-style: solid;
+    border-color: #B6B6B6;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 4px 0;
+    font-size: 14px;
+}
+
+
+.registo_empresa {
+    display: flex;
+    width: 100%;
+    height: 90.5vh;
+    justify-content: space-between;
+}
+
+.registo_empresa_left {
+    display: flex;
+    width: 45%;
+    height: 100%;
+    overflow: hidden;
+    justify-content: space-around;
+}
+
+.registo_empresa_right {
+    display: flex;
+    width: 55%;
+    border-image-width: 1000px;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 120px;
+    overflow-y: scroll;
+}
+
+.registo_empresa_rtext {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+    .registo_empresa_rtext h1 {
+        margin-bottom: 16px;
+    }
+
+    .registo_empresa_rtext button {
+        display: flex;
+        margin-top: 38px;
+        align-items: flex-end;
+        justify-content: flex-end;
+        border: none;
+    }
+
+y
+.registo_empresa_rsymbol {
+    width: 108px;
+    height: 108px;
+    justify-content: flex-end;
+    margin-left: 56px;
+}
+
+.registo_empresa_right_menu {
+    width: 680px;
+    height: 100%;
+    padding: 50px 0;
+}
+
+    .registo_empresa_right_menu h1 {
+        font-size: 40px;
+    }
+
+    .registo_empresa_right_menu label {
+        font-size: 14px;
+        font-weight: 700;
+        padding-left: 5px;
+    }
+
+    .registo_empresa_right_menu input {
+        width: 100%;
+        height: 40px;
+        border-radius: 16px;
+        border-style: solid;
+        border-width: 1.5px;
+        color: #b6b6b6;
+        /*border-color: #b6b6b6;*/
+        padding-left: 20px;
+        font-size: 12px;
+        box-shadow: 0;
+    }
+
+.registo_empresa_info {
+    margin: 28px 0;
+    flex-direction: column;
+}
+
+.registo_empresa_lr {
+    justify-content: space-between;
+    display: flex;
+    align-items: flex-start;
+    height: 80px;
+}
+
+.registo_empresa_l {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 49%;
+}
+
+.registo_empresa_r {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    width: 49%;
+}
+
+.registo_empresa_2in1 {
+    display: flex;
+    justify-content: space-between;
+    width: 49%;
+}
+
+.registo_empresa_empresa {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 8px;
+}
+  
+.wrapper div input {
+    width: 100%;
+}
+  
+.out {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.out button {
+    width: 148px;
+    height: 40px;
+    background-color: #00aff0;
+    border: none;
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.out li{
+    list-style: none; 
+}
+
+.out_inverted{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.out_inverted button{
+    width: 148px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    border-color: #00aff0;
+    border-width: 2px;
+    border-style: solid;
+    color: #00aff0;
+    font-size: 20px;
+}
+
+.out_inverted li{
+    list-style: none; 
+}
+
+.centered_menu {
+    display: flex;
+    width: 30vw;
+    height: 50vh;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 30px 35px;
+    border-radius: 20px;
+}
+
+.centered_menu .ins {
+    width: 30vw;
+    height: 5vh;
+    border-radius: 16px;
+    border-style: solid;
+    border-width: 1.5px;
+    color: #b6b6b6;
+    border-color: #b6b6b6;
+    padding-left: 20px;
+    font-size: 12px;
+    box-shadow: 0;
+}
+
+.centered_menu label {
+    color: #000000;
+    padding-left: 20px;
+}
+
+.centered_menu .ins2 {
+    height: 5vh;
+    border-radius: 16px;
+    border-width: 1.5px;
+    border-style: solid;
+    color: #b6b6b6;
+    border-color: #b6b6b6;
+    padding: 0 20px;
+    font-size: 12px;
+    box-shadow: 0;
+}
+
+.wrap {
+    display: flex;
+}
+
+.box {
+    height: 100vh;
+    width: 50vw;
+    overflow-y: scroll;
 }
