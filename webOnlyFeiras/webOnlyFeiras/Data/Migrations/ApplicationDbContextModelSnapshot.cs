@@ -450,6 +450,9 @@ namespace webOnlyFeiras.Data.Migrations
                     b.Property<int>("RepresentanteID")
                         .HasColumnType("int");
 
+                    b.Property<bool>("Verificada")
+                        .HasColumnType("bit");
+
                     b.HasKey("Nome");
 
                     b.HasIndex("RepresentanteID");

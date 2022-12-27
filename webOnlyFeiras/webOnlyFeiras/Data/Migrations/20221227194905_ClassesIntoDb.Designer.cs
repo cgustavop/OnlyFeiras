@@ -12,8 +12,8 @@ using webOnlyFeiras.Data;
 namespace webOnlyFeiras.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221227173202_AddClassesToDb")]
-    partial class AddClassesToDb
+    [Migration("20221227194905_ClassesIntoDb")]
+    partial class ClassesIntoDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -452,6 +452,9 @@ namespace webOnlyFeiras.Data.Migrations
 
                     b.Property<int>("RepresentanteID")
                         .HasColumnType("int");
+
+                    b.Property<bool>("Verificada")
+                        .HasColumnType("bit");
 
                     b.HasKey("Nome");
 

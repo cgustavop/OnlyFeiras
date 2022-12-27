@@ -18,5 +18,6 @@ namespace webOnlyFeiras.Model
         public string Morada { get; set; }
         [Required]
         public int NIPC { get; set; }
+        public bool Verificada { get; set; }
     }
 }
