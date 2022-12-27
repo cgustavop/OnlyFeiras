@@ -8,26 +8,24 @@ namespace webOnlyFeiras.Model
         public int ID { get; set; }
         
         [Required]
-        public int Nome { get; set; }
+        public string Nome { get; set; }
 
         [Required]
-        public int Email { get; set; }
+        public string Email { get; set; }
 
         [Required]
-        public int DataNascimento { get; set; }
-        public int Morada { get; set; }
+        public DateTime DataNascimento { get; set; }
+        public string Morada { get; set; }
 
         public int Contacto { get; set;}
 
         [Required]
-        public int Password { get; set; }
-
-        public int Marca { get; set; }
+        public string Password { get; set; }
 
         public int PathFotografiaPerfil { get; set; }
         
         [Required]
-        public int IsOrganizador { get; set; }
+        public bool IsOrganizador { get; set; }
 
 
     }

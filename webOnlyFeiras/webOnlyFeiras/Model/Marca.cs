@@ -9,7 +9,7 @@ namespace webOnlyFeiras.Model
         [Required]
         public Utilizador Representante { get; set; }
         [Required]
-        public DateOnly DataFundacao { get; set; }
+        public DateTime DataFundacao { get; set; }
         public string Nacionalidade { get; set; }
         public string Mercado { get; set; }
         [Required]

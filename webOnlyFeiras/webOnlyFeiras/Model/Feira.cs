@@ -26,7 +26,7 @@ namespace webOnlyFeiras.Model
         [Required]
         public TipoDeFeira Tipo { get; set; }
 
-        public List<string> Categorias { get; set; }
+        public List<Categoria> Categorias { get; set; }
 
     }
 }
