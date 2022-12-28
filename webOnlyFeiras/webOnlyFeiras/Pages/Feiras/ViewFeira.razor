@@ -1,4 +1,4 @@
-﻿@page "/feira"
+﻿@page "/feira/{id}"
 
 <Destaque imagem="assets/shoes.jpg" />
 
@@ -41,5 +41,6 @@
 
 
 @code {
-
+    [Parameter]
+    public int Id { get; set; }
 }

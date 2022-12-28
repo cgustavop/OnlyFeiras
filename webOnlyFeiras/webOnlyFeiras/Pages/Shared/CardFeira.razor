@@ -1,4 +1,5 @@
-﻿
+﻿@using System.Globalization;
+
     <div class="feira">
         <a href=@referencia>
             <div class="feira-top" style="background-image: linear-gradient(120deg, #00AFF0 0%, rgba(217, 217, 217, 0) 60%), url(@imagem);">
@@ -13,7 +14,7 @@
             <div class="align-h">
                 <div class="align-v">
                 <a href=@referencia  class="tipo">Feira @tipo</a>
-                <a href=@referencia class="data">@data</a>
+                <a href=@referencia class="data">@ExibirMes(data)</a>
                 </div>
                     <button class="icon" @onclick="MudarEstadoFeiravorito"><img src="@icon_feiravorito" alt="Feiravoritos" height="25"></button>
                 </div>
@@ -32,7 +33,7 @@
         public string titulo { get; set; } = "Título Feira";
 
         [Parameter]
-        public string data { get; set; } = "Data da feira";
+        public DateTime data { get; set; }
 
         [Parameter]
         public string tipo { get; set; } = "Tipo de feira";
@@ -47,5 +48,10 @@
             feiravorito = !feiravorito;
             if (feiravorito) { icon_feiravorito = "assets/faved.svg"; }
             else { icon_feiravorito = "assets/fav.svg"; }
+        }
+
+        public static string ExibirMes(DateTime data)
+        {
+            return data.ToString("dd 'de' MMMM", CultureInfo.CreateSpecificCulture("pt-pt"));
         }
     }

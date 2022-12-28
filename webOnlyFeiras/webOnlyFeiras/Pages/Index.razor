@@ -1,6 +1,10 @@
 ﻿@page "/"
+@using webOnlyFeiras.Model
+@using webOnlyFeiras.Data
+@using Microsoft.EntityFrameworkCore
+@inject IDbContextFactory<ApplicationDbContext> db
 
-<Destaque imagem=@imagem titulo=@titulo descricao=@descricao data=@data/>
+<Destaque imagem=@FeiraDestaque.PathFotografia titulo=@FeiraDestaque.Nome descricao=@FeiraDestaque.Descricao data=@FeiraDestaque.DataInicio />
 
     <div>
         <ul class="filters">
@@ -14,14 +18,10 @@
     </div> 
     <div class="grid">
 
-        <CardFeira referencia="/feira"/>
-        <CardFeira referencia="/feira" />
-        <CardFeira referencia="/feira" />
-        <CardFeira referencia="/feira" />
-        <CardFeira referencia="/feira" />
-        <CardFeira referencia="/feira" />
-        <CardFeira referencia="/feira" />
-        <CardFeira referencia="/feira" />
+    @foreach (var obj in ListFeiras)
+    {
+        <CardFeira titulo=@obj.Nome data=@obj.DataInicio imagem=@obj.PathFotografia referencia="/feira" tipo=@Feira.TipoDeFeira.GetName(obj.Tipo) />
+    }
 
 
     </div>
@@ -30,11 +30,22 @@
 
 
 @code{
-    public string imagem { get; set; } = "assets/shoes.jpg";
-    
-    public string titulo { get; set; } = "Título Feira";
-    
-    public string descricao { get; set; } = "Isto é a descrição da feira, pode ser tão extensa quanto se quiser, embora não dê muito jeito dado o espaço que temos aqui.";
 
-    public string data { get; set; } = "Data da feira";
+    public IEnumerable<Feira> ListFeiras
+    {
+        get
+        {
+            ApplicationDbContext context = db.CreateDbContext();
+            DbSet<Feira> set = context.Set<Feira>();
+            return set.OrderByDescending(x => x.DataInicio); //organiza dando as feiras mais próximas
+        }
+    }
+
+    public Feira FeiraDestaque
+    {
+        get{
+            Feira destaque = ListFeiras.OrderByDescending(x => x.DataInicio).FirstOrDefault();
+            return destaque;
+        }
+    }
 }
