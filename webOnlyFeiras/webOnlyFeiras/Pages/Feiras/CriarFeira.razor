@@ -1,0 +1,107 @@
+﻿@page "/feiras/criar"
+
+<div class="align-h">
+    <h1 class="wheight600">Feiras</h1>
+    <Butao texto="Criar Feira" />
+</div>
+
+<div class="align-h">
+    <div style="width: 30%;">
+        <div style="padding-bottom: 20px;">
+            <p class="wheight600" style="font-size: 24px;">Título</p>
+            <input class="place_holder" style="width: 630px;" type="tel" id="telemovel" name="telemovel" placeholder="Título da tua feira" autocomplete="off">
+          </div>
+
+        <div style="padding-bottom: 20px;">
+            <p class="wheight600" style="font-size: 24px;">Descrição</p>
+            <div style="width:630px;">
+                <RadzenTextArea Placeholder="Escreve algo sobre a tua feira" Change=@(args => DescricaoOnChange(args, "TextArea with placeholder")) Class="w-100" />
+             </div>
+        </div>
+
+        <div style="padding-bottom: 20px;">
+             <div class="align-h">
+                <div>
+                    <p class="wheight600" style="font-size: 24px;">Data começo</p>
+
+                    <div>
+                        <RadzenDatePicker TValue="DateTime?" ShowTime="true" Change=@(args => DataOnChange(args, "DatePicker with 12 hour time format", "MM/dd/yyyy h:mm tt")) HourFormat="12" DateFormat="MM/dd/yyyy h:mm tt" Style="width:300px;" />
+                    </div>
+                </div>
+    
+                <div style="padding-left: 30px;">
+                    <p class="wheight600" style="font-size: 24px;">Data fim</p>
+                    <div>
+                        <RadzenDatePicker TValue="DateTime?" ShowTime="true" Change=@(args => DataOnChange(args, "DatePicker with 12 hour time format", "MM/dd/yyyy h:mm tt")) HourFormat="12" DateFormat="MM/dd/yyyy h:mm tt" Style="width:300px;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="align-h" style="width: 300px;">
+            <div>
+                <p class="wheight600" style="font-size: 24px;">Tipo</p>
+                <div class="custom-select" style="width:300px;">
+                    <select>
+                        <option value="0">Corporativa</option>
+                        <option value="1">Mista</option>
+                        <option value="2">Informal</option>
+                    </select>
+                </div>
+            </div>
+
+            <div style="padding-left: 30px; ">
+                <p class="wheight600" style="font-size: 24px;">Etiquetas</p>
+                <input class="place_holder" type="tel" id="telemovel" name="telemovel" placeholder="Nº telemóvel" autocomplete="off">
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <PhotoUpload />
+    </div>
+</div>
+@code {
+    DateTime? value = DateTime.Now;
+    string desc;
+
+    IEnumerable<DateTime> dates = new DateTime[] { DateTime.Today.AddDays(-1), DateTime.Today.AddDays(1) };
+
+    void DataOnChange(DateTime? value, string name, string format)
+    {
+    }
+
+    void DateRenderSpecial(DateRenderEventArgs args)
+    {
+        if (dates.Contains(args.Date))
+        {
+            args.Attributes.Add("style", "background-color: #00AFF0; border-color: white;");
+        }
+    }
+
+    void DateRender(DateRenderEventArgs args)
+    {
+        args.Disabled = args.Disabled || dates.Contains(args.Date);
+    }
+
+    void DateRenderNoWeekends(DateRenderEventArgs args)
+    {
+        args.Disabled = args.Disabled || args.Date.DayOfWeek == DayOfWeek.Sunday || args.Date.DayOfWeek == DayOfWeek.Saturday;
+    }
+
+    void OnTodayClick()
+    {
+        value = DateTime.Now;
+    }
+
+    void DescricaoOnChange(string value, string name)
+    {
+    desc = value;
+    }
+   
+
+    //seletor de tipo de feira
+    IEnumerable<int> tipos = new int[] {0, 1, 2 };
+    IEnumerable<string> multipleValues = new string[] { "Corporativa", "Mista", "Informal"};
+    string valueTipo = "Corporativa";
+}

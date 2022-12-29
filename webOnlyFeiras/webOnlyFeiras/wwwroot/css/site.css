@@ -5,11 +5,13 @@ html, body {
     padding: 0;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: #F2F2F2;
+    
 }
 
 .content {
     padding-left: 20%;
     padding-right: 20%;
+    padding-bottom: 40px;
 }
 
 button:focus {
@@ -46,6 +48,7 @@ app {
 
 .main {
     flex: 1;
+    min-height: 100vh;
 }
 
     .main .top-row {
@@ -219,10 +222,10 @@ app {
 
 footer {
     background-color: #ffffff;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    padding-left: 14%;
-    padding-right: 14%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20%;
+    padding-right: 20%;
 }
 
 .auth {
@@ -288,20 +291,21 @@ footer {
     display: inline-block;
 }
 
-    .auth a {
+.auth a {
     text-align: right;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
     .auth a:hover {
-        color: grey;
+        color: grey !important;
+        
     }
 
 .button {
     background-color: transparent;
-    border: none;
-    text-decoration: none;
-    cursor: pointer;
+    border: none !important;
+    text-decoration: none ;
+    cursor: pointer !important;
 }
 
 .auth button {
@@ -335,19 +339,19 @@ footer {
     font-size: 34px;
 }
 
-.white {
+.txt-white {
     color: #FFFFFF;
 }
 
-.black {
+.txt-black {
     color: #000000;
 }
 
-.blue {
+.txt-blue {
     color: #00AFF0;
 }
 
-.grey {
+.txt-grey {
     color: #B6B6B6;
 }
 
@@ -694,33 +698,21 @@ button:hover {
         margin-left: 12px;
     }
 
-.grid_tagslist_2 {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    margin: 0 15px;
-}
-
-.grid_tagslist_3 {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    margin: 0 15px;
-}
-
-.grid_tagslist li {
+.chip {
+    display: inline-block;
+    padding: 0px 20px;
+    margin: 1px 4px;
+    line-height: 32px;
+    border-radius: 25px;
     border-radius: 28px;
-    color: #828282;
     border-width: 1.5px;
     border-style: solid;
     border-color: #B6B6B6;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    text-align: center;
-    padding: 4px 0;
+    align-content: center;
     font-size: 14px;
+    overflow: hidden;
+    color: #828282;
 }
-
 
 .registo_empresa {
     display: flex;
@@ -917,6 +909,19 @@ y
     box-shadow: 0;
 }
 
+.place_holder {
+    width: 300px;
+    height: 5vh;
+    border-radius: 16px;
+    border-style: solid;
+    border-width: 1.5px;
+    color: #b6b6b6;
+    border-color: #b6b6b6;
+    padding-left: 20px;
+    font-size: 16px;
+    box-shadow: 0;
+}
+
 .centered_menu label {
     color: #000000;
     padding-left: 20px;
@@ -942,4 +947,39 @@ y
     height: 100vh;
     width: 50vw;
     overflow-y: scroll;
+}
+
+.filter-black {
+    filter: invert(0%) sepia(6%) saturate(0%) hue-rotate(50deg) brightness(96%) contrast(105%);
+}
+
+.photo-upload {
+    box-sizing: border-box;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 333px;
+    height: 190px;
+    color: #828282;
+    font-weight: 600;
+    background: #F2F2F2;
+    border: 2px dashed #828282;
+    border-radius: 24px;
+    padding: 20px 20px;
+}
+
+.photo-upload:hover {
+    box-sizing: border-box;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 333px;
+    height: 190px;
+    color: #828282;
+    font-weight: 600;
+    background: #D9D9D9;
+    border: 2px dashed #828282;
+    border-radius: 24px;
+    padding: 20px 20px;
+    opacity:70%;
 }
