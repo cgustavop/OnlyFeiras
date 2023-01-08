@@ -1,6 +1,17 @@
-﻿<button class="pill-small load">@texto</button>
+﻿<button type="submit" onclick="@OnClickCallback" @onclick:preventDefault="@PreventDefault" class="pill-small load"><span>@texto</span></button>
 
 @code {
+    [ParameterAttribute]
+    public EventCallback<MouseEventArgs> OnClickCallback { get; set; }
+
+    private bool PreventDefault
+    {
+        get
+        {
+            return OnClickCallback.HasDelegate;
+        }
+    }
+
     [Parameter]
     public string texto { get; set; } = "";
 }

@@ -20,7 +20,7 @@
 
     @foreach (var obj in ListFeiras)
     {
-        <CardFeira titulo=@obj.Nome data=@obj.DataInicio imagem=@obj.PathFotografia referencia="/feira" tipo=@Feira.TipoDeFeira.GetName(obj.Tipo) />
+        <CardFeira titulo=@obj.Nome data=@obj.DataInicio imagem=@obj.PathFotografia referencia=@($"/feiras/{obj.Id}") tipo=@Feira.TipoDeFeira.GetName(obj.Tipo) />
     }
 
 
