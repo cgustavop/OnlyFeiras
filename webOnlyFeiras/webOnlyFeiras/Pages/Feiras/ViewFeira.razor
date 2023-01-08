@@ -8,17 +8,32 @@
 <div class="destaque white" style="background-image: linear-gradient(120deg, #00AFF0 0%, rgba(217, 217, 217, 0) 60%), url(@ContextFeira.PathFotografia);">
 </div>
 
-<h1 style="font-weight: 600; color: #00AFF0;">@ContextFeira.DataInicio.ToString("d MMM", CultureInfo.CreateSpecificCulture("pt-pt"))</h1>
+<h3 style="font-weight: 600; color: #00AFF0;">@ContextFeira.DataInicio.ToString("d MMM", CultureInfo.CreateSpecificCulture("pt-pt"))</h3>
 <h1 style="font-weight: 600; font-size: 4em;">@ContextFeira.Nome</h1>
 <div class="line"></div>
 
+
+    
+
+    <div class="grid">
+        <CardBanca />
+        <CardBanca />
+        <CardBanca />
+        <CardBanca />
+        <CardBanca />
+        <CardBanca />
+        <CardBanca />
+    </div>
+
+
+
         <div class="align-h">
+                
             <div class="align-v">
-                <div style="padding-right: 40%; padding-bottom:10%;">
+                <div style="padding-right: 40%; padding-bottom:5%;">
                     <h2 style="font-size: 24px; font-weight: 600;">Acerca desta feira</h2><br>
                     <p style="font-size: 16px;">@ContextFeira.Descricao</p>
                 </div>
-
                 <div class="align-h">
 
                     <div class="align-h" >
@@ -55,8 +70,9 @@
             <div style="align-self:start;">
                 <Etiquetas />
             </div>
-
+            
         </div>
+
 
 
 @code {

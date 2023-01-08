@@ -1,21 +1,27 @@
 ﻿@page "/feiras/criar"
+@using webOnlyFeiras.Model
+@using webOnlyFeiras.Data
+@using Microsoft.EntityFrameworkCore
+@inject NotificationService NotificationService
+@inject IDbContextFactory<ApplicationDbContext> db
 
 <div class="align-h">
     <h1 class="wheight600">Feiras</h1>
-    <Butao texto="Criar Feira" />
+    <Butao texto="Criar Feira" OnClickCallback="Save"/>
+    
 </div>
 
 <div class="align-h">
     <div style="width: 30%;">
         <div style="padding-bottom: 20px;">
             <p class="wheight600" style="font-size: 24px;">Título</p>
-            <input class="place_holder" style="width: 630px;" type="tel" id="telemovel" name="telemovel" placeholder="Título da tua feira" autocomplete="off">
+            <RadzenTextBox Placeholder="Dá um nome apelativo à tua feira" Change=@(args => OnChange(args, "titulo")) Style="width:630px; border-radius: 15px 15px 15px 15px;" />
           </div>
 
         <div style="padding-bottom: 20px;">
             <p class="wheight600" style="font-size: 24px;">Descrição</p>
             <div style="width:630px;">
-                <RadzenTextArea Placeholder="Escreve algo sobre a tua feira" Change=@(args => DescricaoOnChange(args, "TextArea with placeholder")) Class="w-100" />
+                <RadzenTextArea Placeholder="Escreve algo sobre a tua feira" Change=@(args => OnChange(args, "descricao")) Style="width:630px; border-radius: 15px 15px 15px 15px;" />
              </div>
         </div>
 
@@ -25,14 +31,14 @@
                     <p class="wheight600" style="font-size: 24px;">Data começo</p>
 
                     <div>
-                        <RadzenDatePicker TValue="DateTime?" ShowTime="true" Change=@(args => DataOnChange(args, "DatePicker with 12 hour time format", "MM/dd/yyyy h:mm tt")) HourFormat="12" DateFormat="MM/dd/yyyy h:mm tt" Style="width:300px;" />
+                        <RadzenDatePicker TValue="DateTime?" ShowTime="true" Change=@(args => DataOnChange(args, "inicio", "MM/dd/yyyy h:mm tt")) HourFormat="12" DateFormat="MM/dd/yyyy h:mm tt" Style="width:300px;border-radius: 15px 15px 15px 15px;" />
                     </div>
                 </div>
     
                 <div style="padding-left: 30px;">
                     <p class="wheight600" style="font-size: 24px;">Data fim</p>
                     <div>
-                        <RadzenDatePicker TValue="DateTime?" ShowTime="true" Change=@(args => DataOnChange(args, "DatePicker with 12 hour time format", "MM/dd/yyyy h:mm tt")) HourFormat="12" DateFormat="MM/dd/yyyy h:mm tt" Style="width:300px;" />
+                        <RadzenDatePicker TValue="DateTime?" ShowTime="true" Change=@(args => DataOnChange(args, "fim", "MM/dd/yyyy h:mm tt")) HourFormat="12" DateFormat="MM/dd/yyyy h:mm tt" Style="width:300px;border-radius: 15px 15px 15px 15px;" />
                     </div>
                 </div>
             </div>
@@ -41,34 +47,66 @@
         <div class="align-h" style="width: 300px;">
             <div>
                 <p class="wheight600" style="font-size: 24px;">Tipo</p>
-                <div class="custom-select" style="width:300px;">
-                    <select>
-                        <option value="0">Corporativa</option>
-                        <option value="1">Mista</option>
-                        <option value="2">Informal</option>
-                    </select>
-                </div>
+                <RadzenDropDown AllowClear="false" TValue="string" Class="w-300" Placeholder="Seleciona um tipo" Data=@multipleValues Change=@(args => OnChange((string)args, "tipo")) Style="width:300px; border-radius: 15px 15px 15px 15px;" />
             </div>
 
             <div style="padding-left: 30px; ">
-                <p class="wheight600" style="font-size: 24px;">Etiquetas</p>
-                <input class="place_holder" type="tel" id="telemovel" name="telemovel" placeholder="Nº telemóvel" autocomplete="off">
+                <p class="wheight600" style="font-size: 24px;">Categoria</p>
+                <RadzenDropDown AllowClear="false" TValue="string" Class="w-300" Placeholder="Indique uma categoria" Data=@categorias Change=@(args => OnChange((string)args, "categoria")) Style="width:300px; border-radius: 15px 15px 15px 15px;" />
             </div>
+
+            <!--
+            <div style="padding-left: 30px; ">
+                <p class="wheight600" style="font-size: 24px;">Etiquetas</p>
+                <RadzenDropDown AllowClear="true" AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                                @bind-Value=@multipleValues Multiple="true" Placeholder="Seleciona as categorias" Data=@ListCategorias TextProperty="Nome" ValueProperty="Id"
+                                Change=@(args => OnChange((string)args, "categoria")) Style="width:300px; border-radius: 15px 15px 15px 15px;" />
+            </div>
+            -->
         </div>
     </div>
     
     <div>
-        <PhotoUpload />
+        <div class="photo-upload">
+    <div class="align-v">
+        Carrega uma imagem
+            <input style="border:none; margin-top: 5px;" type="file" id="marca_img" name="marca_img"><br><br>
     </div>
 </div>
+    </div>
+</div>
+
 @code {
-    DateTime? value = DateTime.Now;
-    string desc;
+    private Feira newFeira = new Feira();
+
+    //TODO: método que adiciona categorias novas à base de dados
+
+    //TODO: método que cria e insere instância da feira na base de dados
 
     IEnumerable<DateTime> dates = new DateTime[] { DateTime.Today.AddDays(-1), DateTime.Today.AddDays(1) };
 
+    public IEnumerable<Categoria> ListCategorias
+    {
+        get
+        {
+            ApplicationDbContext context = db.CreateDbContext();
+            DbSet<Categoria> set = context.Set<Categoria>();
+            return set;
+        }
+    }
+
     void DataOnChange(DateTime? value, string name, string format)
     {
+        switch (name)
+        {
+            case "inicio":
+                newFeira.DataInicio = value ?? DateTime.Now;
+                break;
+
+            case "fim":
+                newFeira.DataFim = value ?? DateTime.Now;
+                break;
+        }
     }
 
     void DateRenderSpecial(DateRenderEventArgs args)
@@ -91,17 +129,57 @@
 
     void OnTodayClick()
     {
-        value = DateTime.Now;
+        newFeira.DataInicio = DateTime.Now;
     }
 
-    void DescricaoOnChange(string value, string name)
+    void OnChange(string txt, string name)
     {
-    desc = value;
+        switch (name)
+        {
+            case "descricao":
+                newFeira.Descricao = txt;
+                break;
+
+            case "titulo":
+                newFeira.Nome = txt;
+                break;
+
+            case "tipo":
+                newFeira.Tipo = (Feira.TipoDeFeira)Enum.Parse(typeof(Feira.TipoDeFeira), txt); ;
+                break;
+
+            case "categoria":
+                break;
+        }
     }
-   
+
 
     //seletor de tipo de feira
     IEnumerable<int> tipos = new int[] {0, 1, 2 };
     IEnumerable<string> multipleValues = new string[] { "Corporativa", "Mista", "Informal"};
+    IEnumerable<string> categorias = new string[] { "Calçado", "Cereais", "Agricultura", "Cultura", "Animais", "Automóveis", "Mobiliário"};
     string valueTipo = "Corporativa";
+
+    void ShowNotification(NotificationMessage message)
+    {
+        NotificationService.Notify(message);
+    }
+
+    public void Save()
+    {
+        ApplicationDbContext context = db.CreateDbContext();
+        newFeira.PathFotografia = "assets/estofos.jpg";
+        context.Feira.Add(newFeira);
+        int r = context.SaveChanges();
+        if(r > 0)
+        {
+            ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = "Feira criada com sucesso", Detail = "teste", Duration = 4000 });
+        }
+        else
+        {
+            ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = "Erro a criar feira", Detail = "Error Detail", Duration = 4000 });
+        }
+    }
+
+    
 }
