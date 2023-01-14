@@ -14,16 +14,21 @@
 
 
     
-
-    <div class="grid">
-        <CardBanca />
-        <CardBanca />
-        <CardBanca />
-        <CardBanca />
-        <CardBanca />
-        <CardBanca />
-        <CardBanca />
-    </div>
+<AuthorizeView>
+    <Authorized>
+        <div class="grid">
+            <CardBanca />
+            <CardBanca />
+            <CardBanca />
+            <CardBanca />
+            <CardBanca />
+            <CardBanca />
+            <CardBanca />
+        </div>
+     </Authorized>
+     <NotAuthorized>
+    </NotAuthorized>
+</AuthorizeView>
 
 
 

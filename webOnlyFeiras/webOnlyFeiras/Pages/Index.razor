@@ -44,7 +44,7 @@
     public Feira FeiraDestaque
     {
         get{
-            Feira destaque = ListFeiras.OrderByDescending(x => x.DataInicio).FirstOrDefault();
+            Feira destaque = ListFeiras.OrderByDescending(x => x.DataInicio).FirstOrDefault() ?? new Feira();
             return destaque;
         }
     }
