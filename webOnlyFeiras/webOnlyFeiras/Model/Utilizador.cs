@@ -15,7 +15,8 @@ namespace webOnlyFeiras.Model
 
         [Required]
         public DateTime DataNascimento { get; set; }
-        public string Morada { get; set; }
+
+        public string Morada { get; set; } = String.Empty;
 
         public int Contacto { get; set;}
 
@@ -23,10 +24,8 @@ namespace webOnlyFeiras.Model
         public string Password { get; set; }
 
         public int PathFotografiaPerfil { get; set; }
-        
+
         [Required]
-        public bool IsOrganizador { get; set; }
-
-
+        public string Role { get; set; } = String.Empty;
     }
 }

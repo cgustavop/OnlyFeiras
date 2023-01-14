@@ -15,14 +15,14 @@ namespace webOnlyFeiras.Model
         public int Id { get; set; }
 
         [Required]
-        public string Nome { get; set; }
+        public string Nome { get; set; } = String.Empty;
         [Required]
-        public string PathFotografia { get; set; }
+        public string PathFotografia { get; set; } = String.Empty;
         [Required]
         public DateTime DataInicio { get; set; }
         [Required]
         public DateTime DataFim { get; set; }
-        public string Descricao { get; set; }
+        public string Descricao { get; set; } = String.Empty;
         [Required]
         public TipoDeFeira Tipo { get; set; }
 

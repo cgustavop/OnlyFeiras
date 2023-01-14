@@ -7,8 +7,8 @@ namespace webOnlyFeiras.Model
         [Key]
         public int BancaId { get; set; }
         [Required]
-        public string PathFotografia { get; set; }
-        public string Descricao { get; set; }
+        public string PathFotografia { get; set; } = String.Empty;
+        public string Descricao { get; set; } = String.Empty;
 
     }
 }

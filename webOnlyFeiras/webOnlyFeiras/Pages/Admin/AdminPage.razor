@@ -1,0 +1,114 @@
+﻿@page "/admin"
+@using webOnlyFeiras.Data
+@using webOnlyFeiras.Model
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Mvc.Rendering
+@using System.Security.Claims
+@using Microsoft.EntityFrameworkCore
+@inject IJSRuntime JsRuntime
+@inject IDbContextFactory<ApplicationDbContext> db
+@inject UserManager<IdentityUser> _userManager
+@inject SignInManager<IdentityUser> _signInManager
+@inject NotificationService NotificationService
+
+
+
+<h3>AdminPage</h3>
+<EditForm Model="novoUtilizador" OnValidSubmit="@AddUserWithRole">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div>
+        <label for="email"> Email do utilizador</label>
+        <div>
+            <InputText id="email" @bind-Value="novoUtilizador.Email"></InputText>
+        </div>
+    </div>
+
+    <div>
+        <label for="nome"> Password</label>
+        <div>
+            <InputText id="nome" @bind-Value="novoUtilizador.Password"></InputText>
+        </div>
+    </div>
+
+    <div>
+        <label for="nome"> Nome do utilizador</label>
+        <div>
+            <InputText id="nome" @bind-Value="novoUtilizador.Nome"></InputText>
+        </div>
+    </div>
+
+    <div>
+        <label for="role-select"> Add Role</label>
+        <div>
+            <InputSelect id="role-select" @bind-Value="novoUtilizador.Role">
+                @foreach (var role in selectList)
+                {
+                    <option value="@role.Value" selected=@role.Selected>@role.Text</option>
+                }
+            </InputSelect>
+        </div>
+    </div>
+    <input type="submit" class="button" value="Criar"/>
+</EditForm>
+
+
+@code {
+    Utilizador novoUtilizador = new Utilizador();
+    List<Role> rolesList = new List<Role>();
+    List<SelectListItem> selectList = new List<SelectListItem>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        rolesList = new List<Role>()
+        {
+            new Role(){RoleName = "Admin", ID = "1"},
+            new Role(){RoleName = "Organizador", ID = "2"},
+            new Role(){RoleName = "Utilizador", ID = "3"}
+        };
+
+        foreach(Role role in rolesList)
+        {
+            if (rolesList.Count < 1)
+            {
+                selectList.Add(new SelectListItem()
+                    {
+                        Text = role.RoleName,
+                        Value = role.ID,
+                        Selected = true
+                    });
+            }
+            else
+            {
+                selectList.Add(new SelectListItem()
+                    {
+                        Text = role.RoleName,
+                        Value = role.ID,
+                        Selected = false
+                    });
+            }
+        }
+    }
+
+    void ShowNotification(NotificationMessage message)
+    {
+        NotificationService.Notify(message);
+    }
+
+    public void AddUserWithRole()
+    {
+        ApplicationDbContext context = db.CreateDbContext();
+        novoUtilizador.DataNascimento = DateTime.Now;
+        context.Utilizador.Add(novoUtilizador);
+        int r = context.SaveChanges();
+        if (r > 0)
+        {
+            ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = "Utilizador criado", Detail = $"Novo {novoUtilizador.Role}", Duration = 4000 });
+        }
+        else
+        {
+            ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = "Erro a criar novo utilizador", Detail = "Error Detail", Duration = 4000 });
+        }
+    }
+}
