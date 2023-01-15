@@ -14,10 +14,6 @@ namespace webOnlyFeiras.Data.Migrations
                 name: "IsOrganizador",
                 table: "Utilizador");
 
-            migrationBuilder.DropColumn(
-                name: "Role",
-                table: "Utilizador");
-
             migrationBuilder.AddColumn<string>(
                 name: "Role",
                 table: "Utilizador",
