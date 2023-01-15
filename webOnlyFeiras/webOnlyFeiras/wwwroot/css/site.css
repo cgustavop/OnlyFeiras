@@ -999,3 +999,19 @@ y
     padding: 20px 20px;
     opacity:70%;
 }
+
+.input-texto {
+    height: 36px;
+    width: 630px;
+    border-radius: 15px 15px 15px 15px;
+    outline-color: rgba(255,255,255,0.1);
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: none;
+    background-color: rgb(255, 255, 255);
+    line-height: 24px;
+    padding-bottom: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 7px;
+}

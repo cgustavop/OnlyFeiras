@@ -4,6 +4,8 @@
 @using Microsoft.EntityFrameworkCore
 @inject NotificationService NotificationService
 @inject IDbContextFactory<ApplicationDbContext> db
+<AuthorizeView Roles="Admin, Organizador">
+    <Authorized>
 
 <div class="align-h">
     <h1 class="wheight600">Feiras</h1>
@@ -75,6 +77,10 @@
 </div>
     </div>
 </div>
+
+
+    </Authorized>
+</AuthorizeView>
 
 @code {
     private Feira newFeira = new Feira();

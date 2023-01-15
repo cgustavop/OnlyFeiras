@@ -12,8 +12,8 @@ namespace webOnlyFeiras.Model
         [Key]
         public int Id { get; set; }
         [Required]
-        public string Nome { get; set; }
-        public string Descricao { get; set;}
+        public string Nome { get; set; } = String.Empty;
+        public string Descricao { get; set; } = String.Empty;
         public Decimal Preco { get; set; }
         [Required]
         public TipoDeProduto Tipo { get; set; }
