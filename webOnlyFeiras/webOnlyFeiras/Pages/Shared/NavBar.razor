@@ -1,11 +1,19 @@
 ﻿<div class="topnav">
         <a class="logo" href=""><img src="assets/logo.svg" alt="OnlyFeiras" width="217" height="63"></a>
 
+
         <AuthorizeView Roles="Admin">
             <Authorized>
                 <a class="txt-black txt-mid" href="/admin">Área de administrador</a>
              </Authorized>
         </AuthorizeView>
+
+        <AuthorizeView Roles="Admin, Organizador">
+            <Authorized>
+                <a class="txt-black txt-mid" href="/feiras/criar">Criar feira</a>
+            </Authorized>
+        </AuthorizeView>
+        
         <AuthorizeView>
             <Authorized>
                 <div class="grid-container-authorized">
