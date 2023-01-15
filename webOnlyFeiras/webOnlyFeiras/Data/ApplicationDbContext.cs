@@ -4,13 +4,12 @@ using webOnlyFeiras.Model;
 
 namespace webOnlyFeiras.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<Utilizador>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
-        public DbSet<Utilizador> Utilizador { get; set; }
         public DbSet<Banca> Bancas { get; set; }
         public DbSet<CandidaturaParaBanca> CandidaturaParaBanca { get; set; }
         public DbSet<CandidaturaParaMarca> CandidaturaParaMarca { get; set; }

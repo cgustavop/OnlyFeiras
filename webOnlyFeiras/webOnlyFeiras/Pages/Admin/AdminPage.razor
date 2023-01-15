@@ -7,108 +7,135 @@
 @using Microsoft.EntityFrameworkCore
 @inject IJSRuntime JsRuntime
 @inject IDbContextFactory<ApplicationDbContext> db
-@inject UserManager<IdentityUser> _userManager
-@inject SignInManager<IdentityUser> _signInManager
+@inject UserManager<Utilizador> _userManager
+@inject SignInManager<Utilizador> _signInManager
+@inject RoleManager<IdentityRole> _roleManager
 @inject NotificationService NotificationService
 
+@if (SuccessAlert)
+{
+    <div class="alert alert-success">
+        @role @novoUtilizador.UserName criado com sucesso.
+    </div>
+}
 
+@if (ErrorAlert)
+{
+    <div class="alert alert-warning">
+        Ocorreu um erro a criar o utilizador.
+    </div>
+}
 
 <h3>AdminPage</h3>
+
+
 <EditForm Model="novoUtilizador" OnValidSubmit="@AddUserWithRole">
     <DataAnnotationsValidator />
     <ValidationSummary />
-
+    
+<div class="margin: 10px;">
     <div>
         <label for="email"> Email do utilizador</label>
         <div>
-            <InputText id="email" @bind-Value="novoUtilizador.Email"></InputText>
+                <RadzenTextBox Placeholder="Email" AutoComplete=true Change =@(args=> OnChange(args, "email")) Style="width:630px; border-radius: 15px 15px 15px 15px;" />
         </div>
     </div>
 
     <div>
-        <label for="nome"> Password</label>
+        <label for="email">Username</label>
         <div>
-            <InputText id="nome" @bind-Value="novoUtilizador.Password"></InputText>
+                <RadzenTextBox Placeholder="Username" AutoComplete=true Change =@(args => OnChange(args, "username")) Style="width:630px; border-radius: 15px 15px 15px 15px;" />
+        </div>
+    </div>
+
+    <div>
+        <label for="nome">Palavra-Passe</label>
+        <div>
+                <RadzenTextBox Placeholder="Palavra-Passe" AutoComplete=true Change =@(args => OnChange(args, "password")) Style="width:630px; border-radius: 15px 15px 15px 15px;" />
         </div>
     </div>
 
     <div>
         <label for="nome"> Nome do utilizador</label>
         <div>
-            <InputText id="nome" @bind-Value="novoUtilizador.Nome"></InputText>
+                <RadzenTextBox Placeholder="Nome completo" AutoComplete=true Change=@(args => OnChange(args, "name")) Style="width:630px; border-radius: 15px 15px 15px 15px;" />
         </div>
     </div>
 
-    <div>
-        <label for="role-select"> Add Role</label>
-        <div>
-            <InputSelect id="role-select" @bind-Value="novoUtilizador.Role">
-                @foreach (var role in selectList)
-                {
-                    <option value="@role.Value" selected=@role.Selected>@role.Text</option>
-                }
-            </InputSelect>
-        </div>
+    <div class="align-h" style="width: 300px;">
+            <div>
+            <label for="nome"> Estatuto</label>
+                <RadzenDropDown AllowClear="false" TValue="string" Class="w-300" Placeholder="Estatuto" Data=@multipleValues Change=@(args => OnChange((string)args, "role")) Style="width:300px; border-radius: 15px 15px 15px 15px;" />
+            </div>
     </div>
-    <input type="submit" class="button" value="Criar"/>
+</div>
+    <button type="submit" class="pill-small load">Criar utilizador</button>
 </EditForm>
 
 
 @code {
+    public bool SuccessAlert { get; set; } = false;
+    public bool ErrorAlert { get; set; } = false;
+
+
     Utilizador novoUtilizador = new Utilizador();
-    List<Role> rolesList = new List<Role>();
     List<SelectListItem> selectList = new List<SelectListItem>();
+    String role = String.Empty;
+    String Password = String.Empty;
+    IEnumerable<string> multipleValues = new string[] { "Admin", "Organizador", "Utilizador" };
 
-    protected override async Task OnInitializedAsync()
-    {
-        rolesList = new List<Role>()
-        {
-            new Role(){RoleName = "Admin", ID = "1"},
-            new Role(){RoleName = "Organizador", ID = "2"},
-            new Role(){RoleName = "Utilizador", ID = "3"}
-        };
-
-        foreach(Role role in rolesList)
-        {
-            if (rolesList.Count < 1)
-            {
-                selectList.Add(new SelectListItem()
-                    {
-                        Text = role.RoleName,
-                        Value = role.ID,
-                        Selected = true
-                    });
-            }
-            else
-            {
-                selectList.Add(new SelectListItem()
-                    {
-                        Text = role.RoleName,
-                        Value = role.ID,
-                        Selected = false
-                    });
-            }
-        }
-    }
 
     void ShowNotification(NotificationMessage message)
     {
         NotificationService.Notify(message);
     }
 
-    public void AddUserWithRole()
+    public async void AddUserWithRole()
     {
-        ApplicationDbContext context = db.CreateDbContext();
+        //ApplicationDbContext context = db.CreateDbContext();
         novoUtilizador.DataNascimento = DateTime.Now;
-        context.Utilizador.Add(novoUtilizador);
-        int r = context.SaveChanges();
-        if (r > 0)
+        var result = await _userManager.CreateAsync(novoUtilizador, Password);
+        var userRole = new IdentityRole(role);
+        var addRoleResult = await _roleManager.CreateAsync(userRole);
+        var addUserRoleResult = await _userManager.AddToRoleAsync(novoUtilizador, role);
+        //context.Users.Add(novoUtilizador);
+        //int r = context.SaveChanges();
+        if (result.Succeeded && addUserRoleResult.Succeeded)
         {
-            ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = "Utilizador criado", Detail = $"Novo {novoUtilizador.Role}", Duration = 4000 });
+            SuccessAlert = true;
         }
         else
         {
-            ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = "Erro a criar novo utilizador", Detail = "Error Detail", Duration = 4000 });
+            ErrorAlert = true;
         }
     }
+
+    void OnChange(string txt, string name)
+    {
+        switch (name)
+        {
+            case "email":
+                novoUtilizador.Email = txt;
+                novoUtilizador.EmailConfirmed = true;
+                break;
+
+            case "username":
+                novoUtilizador.UserName = txt;
+                break;
+            
+            case "password":
+                Password = txt;
+                break;
+            
+            case "name":
+                novoUtilizador.Nome = txt;
+                break;
+
+            case "role":
+                role = txt;
+                break;
+        }
+    }
+
+
 }
