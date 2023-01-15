@@ -1,7 +1,8 @@
 ﻿@page
 @using Microsoft.AspNetCore.Identity
+@using webOnlyFeiras.Model;
 @attribute [IgnoreAntiforgeryToken]
-@inject SignInManager<IdentityUser> SignInManager
+@inject SignInManager<Utilizador> SignInManager
 @functions {
     public async Task<IActionResult> OnPost()
     {

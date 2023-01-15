@@ -9,10 +9,13 @@ namespace webOnlyFeiras.Areas.Identity.Pages.Account
     public class LoginModel : PageModel
     {
         private readonly SignInManager<Utilizador> _signInManager;
+        private readonly UserManager<Utilizador> _userManager;
 
-        public LoginModel(SignInManager<Utilizador> signInManager)
+
+        public LoginModel(SignInManager<Utilizador> signInManager, UserManager<Utilizador> userManager)
         {
             _signInManager = signInManager;
+            _userManager = userManager;
         }
 
         [BindProperty]
@@ -27,8 +30,20 @@ namespace webOnlyFeiras.Areas.Identity.Pages.Account
             ReturnUrl = Url.Content("~/");
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, false, lockoutOnFailure: false);
-                if (result.Succeeded) return LocalRedirect(ReturnUrl);
+                var user = await _userManager.FindByEmailAsync(Input.Email);
+                if (user != null)
+                {
+                    var result = await _signInManager.PasswordSignInAsync(user, Input.Password,true, lockoutOnFailure: false);
+                    if (result.Succeeded)
+                    {
+                        return LocalRedirect(ReturnUrl);
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                        return Page();
+                    }
+                }
             }
             return Page();
         }
