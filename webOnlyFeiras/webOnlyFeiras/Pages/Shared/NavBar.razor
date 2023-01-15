@@ -1,16 +1,24 @@
 ﻿<div class="topnav">
         <a class="logo" href=""><img src="assets/logo.svg" alt="OnlyFeiras" width="217" height="63"></a>
 
+        <AuthorizeView Roles="Admin">
+            <Authorized>
+                <a class="txt-black txt-mid" href="/admin">Área de administrador</a>
+             </Authorized>
+        </AuthorizeView>
         <AuthorizeView>
             <Authorized>
                 <div class="grid-container-authorized">
+
+                    
+
                     <div class="navbar-icons">
 
-                        <a class="icon" href=""><img src="assets/fav.svg" alt="Feiravoritos" height="25"></a>
+                        <a class="icon" href="/feiravoritos"><img src="assets/fav.svg" alt="Feiravoritos" height="25"></a>
 
-                        <a class="icon" href=""><img src="assets/stall-logo.svg" alt="Banca" height="25"></a>
+                        <a class="icon" href="/banca"><img src="assets/stall-logo.svg" alt="Banca" height="25"></a>
 
-                        <a class="icon" href=""><img src="assets/shopping cart.svg" alt="Carrinho de Compras" height="25"></a>
+                        <a class="icon" href="/carrinho"><img src="assets/shopping cart.svg" alt="Carrinho de Compras" height="25"></a>
                     </div>
 
                     <div class="user-info">
