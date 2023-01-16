@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using webOnlyFeiras.Areas.Identity;
 using webOnlyFeiras.Data;
 using Radzen;
+using MudBlazor.Services;
 using webOnlyFeiras.Model;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -14,6 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+builder.Services.AddMudServices();
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
