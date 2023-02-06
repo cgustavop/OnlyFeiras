@@ -1,11 +1,17 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
+using System.Data;
+using System.Drawing;
+using System.Reflection.Metadata;
 using webOnlyFeiras.Model;
 
 namespace webOnlyFeiras.Data
 {
     public class ApplicationDbContext : IdentityDbContext<Utilizador>
     {
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
@@ -21,7 +27,6 @@ namespace webOnlyFeiras.Data
         public DbSet<Marca> Marca { get; set; }
         public DbSet<Produto> Produto { get; set; }
         public DbSet<Produtos> Produtos { get; set; }
-
 
     }
 }
