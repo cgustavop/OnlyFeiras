@@ -1096,14 +1096,15 @@ y
     font-size: 10px;
 }
 
-.bancafeira_right {
+.bancafeira-info {
     display: block;
     background-color: #FFFFFF;
     border-radius: 10px;
-    width: 250px;
+    width: 280px;
     height: 550px;
     justify-content: center;
     align-items: flex-start;
+    margin-left:20px;
 }
 
 .bancafeira_info_top {
@@ -1184,4 +1185,16 @@ y
     .bancafeira_info_bottom button {
         width: 100%;
         margin: 0 12px;
+    }
+
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+    .fill img {
+        min-width: 100%;
+        min-height: 100%;
     }
