@@ -1,27 +1,23 @@
 ﻿@page "/banca"
 
-<div class="bancafeira">
+<div class="align-h" style="align-self:start;">
          
-    <div class="bancafeira_left">
+    <div class="align-v">
             <MudCarousel Class="mud-width-full" Style="height:400px;" ShowArrows="@arrows" ShowBullets="@bullets" EnableSwipeGesture="@enableSwipeGesture" AutoCycle="@autocycle" TData="object">
-                <MudCarouselItem Transition="transition" Color="@Color.Primary">
-                    <div class="d-flex" style="height:100%">
-                        <MudIcon Class="mx-auto my-auto" Icon="@Icons.Custom.Brands.MudBlazor" Size="@Size.Large" />
-                    </div>
-                </MudCarouselItem>
-                <MudCarouselItem Transition="transition" Color="@Color.Secondary">
-                    <div class="d-flex" style="height:100%">
-                        <MudIcon Class="mx-auto my-auto" Icon="@Icons.Custom.Brands.MudBlazor" Size="@Size.Large" />
-                    </div>
-                </MudCarouselItem>
                 <MudCarouselItem Transition="transition">
-                    <div class="d-flex" style="height:100%">
-                        <img src="~/assets/camaras-vintage.jpg">
+                    <div class="d-flex fill" style="height:100%; margin-left: auto;  margin-right: auto;">
+                        <img src="/assets/camaras-vintage.jpg">
                     </div>
                 </MudCarouselItem>
-            </MudCarousel>
-        <div class="bancafeira_grid_artigos">
 
+            <MudCarouselItem Transition="transition">
+                <div class="d-flex fill" style="height:100%; margin-left: auto;  margin-right: auto;">
+                    <img src="/assets/vintage-clothing.jpg">
+                </div>
+            </MudCarouselItem>
+            </MudCarousel>
+        <div class="grid" style="gap: 35px;">
+            
             <div class="bancafeira_artigo">
                 <div class="bancafeira_artigo_top">
                     <h2>Descrição do produto</h2>
@@ -50,9 +46,9 @@
         </div>
                 
     </div>
-
+    <div class="vertical-align: top;">
     <Vendedor />
-            
+    </div>
 </div>
         
 
