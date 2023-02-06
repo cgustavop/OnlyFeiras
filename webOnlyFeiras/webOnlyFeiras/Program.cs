@@ -34,6 +34,34 @@ builder.Services.AddScoped<NotificationService>();
 
 var app = builder.Build();
 
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+    var _roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    var _userManager = scope.ServiceProvider.GetRequiredService<UserManager<Utilizador>>();
+
+    // adicionando um admin
+    var Password = "$404Admin";
+
+    var novoAdmin = new Utilizador() { UserName = "admin", Nome = "Jorge Fernando", Email = "jorgefernando@onlyfeiras.pt", DataNascimento = DateTime.Now };
+
+    var result = await _userManager.CreateAsync(novoAdmin, Password);
+    var userRole = new IdentityRole("Admin");
+    var addRoleResult = await _roleManager.CreateAsync(userRole);
+    var addUserRoleResult = await _userManager.AddToRoleAsync(novoAdmin, "Admin");
+
+    if (result.Succeeded && addUserRoleResult.Succeeded)
+    {
+        Console.WriteLine("Administrador criado");
+    }
+    else
+    {
+        Console.WriteLine("Erro a criar administrador");
+
+    }
+}
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
