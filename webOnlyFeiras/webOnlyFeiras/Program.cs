@@ -35,7 +35,7 @@ builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuth
 builder.Services.AddScoped<NotificationService>();
 
 var app = builder.Build();
-
+/*
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
@@ -63,6 +63,7 @@ using (var scope = app.Services.CreateScope())
 
     }
 }
+*/
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
